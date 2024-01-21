@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bacr"
+    tools:context=".startic_heto">
+
+    <!-- Your existing XML layout with minor changes -->
+
+    <Button
+        android:id="@+id/football"
+        android:layout_width="406dp"
+        android:layout_height="118dp"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="@color/white"
+        android:text="FOOTBALL"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:alpha="0.9" />
+
+    <Button
+        android:id="@+id/BASKETBALL"
+        android:layout_width="407dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="204dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="@color/white"
+        android:text="BASKETBALL"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:alpha="0.9" />
+
+    <Button
+        android:id="@+id/BOXING"
+        android:layout_width="407dp"
+        android:layout_height="116dp"
+        android:layout_marginTop="348dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="@color/white"
+        android:text="BOXING"
+        android:textColor="@color/black"
+        android:textSize="40dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:alpha="0.9" />
+
+    <Button
+        android:id="@+id/v2button"
+        android:layout_width="408dp"
+        android:layout_height="113dp"
+        android:layout_marginTop="508dp"
+        android:layout_marginEnd="4dp"
+        android:backgroundTint="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:text=""
+        android:alpha="0.9" />
+
+    <ImageView
+        android:id="@+id/futcr7"
+        android:layout_width="78dp"
+        android:layout_height="87dp"
+        android:layout_marginStart="300dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.121"
+        app:srcCompat="@drawable/ronaldo" />
+
+    <ImageView
+        android:id="@+id/boxmike"
+        android:layout_width="82dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="288dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.565"
+        app:srcCompat="@drawable/mike" />
+
+    <ImageView
+        android:id="@+id/baskjordan"
+        android:layout_width="70dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="204dp"
+        app:layout_constraintEnd_toEndOf="@+id/BASKETBALL"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/jordan" />
+
+    <ImageView
+        android:id="@+id/vsimage"
+        android:layout_width="316dp"
+        android:layout_height="110dp"
+        android:layout_marginTop="508dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/vs2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
