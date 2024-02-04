@@ -9,62 +9,35 @@
 
     <Button
         android:id="@+id/box_qash_1"
-        android:layout_width="221dp"
-        android:layout_height="99dp"
-        android:backgroundTint="@color/white"
-        android:text="70-80"
+        android:layout_width="173dp"
+        android:layout_height="121dp"
+
+        android:background="@drawable/bec_button6"
+        android:text="90 и более"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="0.89"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
 
-        app:layout_constraintVertical_bias="0.713"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/box_qash_2"
-        android:layout_width="218dp"
-        android:layout_height="109dp"
-        android:backgroundTint="@color/white"
-        android:text="46-50"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        android:layout_width="173dp"
+        android:layout_height="121dp"
+        android:background="@drawable/bec_button6"
 
-    <Button
-        android:id="@+id/box_qash_4"
-        android:layout_width="231dp"
-        android:layout_height="100dp"
-        android:backgroundTint="@color/white"
-        android:text="51-70"
+        android:text="46-80"
+        android:textColor="@color/black"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_bias="0.072"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.492"
-        tools:ignore="MissingConstraints" />
-
-    <Button
-        android:id="@+id/box_qash_5"
-        android:layout_width="225dp"
-        android:layout_height="93dp"
-        android:backgroundTint="@color/white"
-        android:text="90 и более"
-        android:textSize="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.706"
         tools:ignore="MissingConstraints" />
 
     <TextView

@@ -29,7 +29,6 @@ public class start_football extends AppCompatActivity {
     private int[] imageArray1 = {R.drawable.sr1, R.drawable.sr2, R.drawable.sr3, R.drawable.sr4, R.drawable.sr5,R.drawable.sr6,R.drawable.sr7,R.drawable.sr8};
     private Class<? extends AppCompatActivity>[] activityArray = new Class[]{
             start_football_sr.class, start_football_sr2.class, start_football_sr3.class, start_football_sr4.class, start_football_sr5.class, start_football_sr6.class, start_football_sr7.class, start_football_sr8.class
-            // Add more activity classes as needed
     };
 
     @Override
@@ -62,5 +61,8 @@ public class start_football extends AppCompatActivity {
         Intent intent = new Intent(this, selectedActivity);
         startActivity(intent);
     }
+
+
+
 
 }

@@ -33,7 +33,7 @@ public class paks_heto extends AppCompatActivity {
 
 
         Button button4 = findViewById(R.id.pac2_open);
-        button3.setOnClickListener(new View.OnClickListener() {
+        button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent4 = new Intent(paks_heto.this, cards_tal2.class);

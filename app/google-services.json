@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "53609687146",
+    "project_id": "loginapp-3ec87",
+    "storage_bucket": "loginapp-3ec87.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:53609687146:android:69186adbe101f57ac70213",
+        "android_client_info": {
+          "package_name": "com.example.sport_league"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaLP_SlKU7ASlOxyOIqTlzSlFFi0SWAK8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

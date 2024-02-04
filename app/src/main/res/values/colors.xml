@@ -9,4 +9,7 @@
     <color name="main_background">#19191b</color>
     <color name="pink">#e45eb0</color>
     <color name="green1">#34e3c4</color>
+    <color name="yellow">#D08E2E</color>
+    <color name="red">#BC124C</color>
+    <color name="bacbrown">#66453B</color>
 </resources>

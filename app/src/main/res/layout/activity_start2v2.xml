@@ -4,6 +4,51 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/bacr"
     tools:context=".start_2v2">
+
+    <Button
+        android:id="@+id/whitfriend2v2"
+        android:layout_width="205dp"
+        android:layout_height="130dp"
+        android:background="@drawable/bac_button4"
+
+        android:text="Whit friend"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.216"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/whitonline2v2"
+        android:layout_width="205dp"
+        android:layout_height="130dp"
+        android:background="@drawable/bac_button4"
+        android:text="Online"
+        android:textSize="40dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.553"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.693"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="116dp"
+        android:layout_height="116dp"
+        android:layout_marginTop="276dp"
+        android:layout_marginEnd="136dp"
+        android:background="@drawable/bec_button2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/baseline_connect_without_contact_24" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,175 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".start_football_sr8"
-    android:background="@drawable/dasht">
+    android:background="@drawable/dasht"
+    tools:context=".start_football_sr8">
 
+    <Button
+        android:id="@+id/buttonsr8"
+        android:layout_width="82dp"
+        android:layout_height="91dp"
+        android:background="@drawable/bec_button3"
+        android:text="CM"
+        android:textColor="@color/blue"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.328"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button2sr8"
+        android:layout_width="82dp"
+        android:layout_height="91dp"
+        android:background="@drawable/bec_button3"
+        android:text="CM"
+        android:textColor="@color/blue"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.638"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.6"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button3sr8"
+        android:layout_width="82dp"
+        android:layout_height="91dp"
+        android:background="@drawable/bec_button3"
+        android:text="ST"
+
+        android:textColor="@color/blue"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.157"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button4sr8"
+        android:layout_width="82dp"
+        android:layout_height="91dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="176dp"
+        android:background="@drawable/bec_button3"
+        android:text="RB"
+        android:textColor="@color/blue"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button5sr8"
+        android:layout_width="82dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/bec_button3"
+        android:text="CB"
+        android:textSize="25dp"
+        android:textColor="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button6sr8"
+        android:layout_width="82dp"
+        android:layout_height="91dp"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="120dp"
+        android:background="@drawable/bec_button3"
+        android:text="CB"
+        android:textSize="25dp"
+        android:textColor="@color/blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button7sr8"
+        android:layout_width="82dp"
+        android:layout_height="91dp"
+        android:background="@drawable/bec_button3"
+        android:text="CM"
+        android:textColor="@color/blue"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.887"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.42"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button8sr8"
+        android:layout_width="82dp"
+        android:layout_height="91dp"
+        android:background="@drawable/bec_button3"
+        android:text="GK"
+        android:textColor="@color/blue"
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.975"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button9sr8"
+        android:layout_width="82dp"
+        android:layout_height="91dp"
+        android:layout_marginStart="32dp"
+        android:background="@drawable/bec_button3"
+        android:text="CM"
+        android:textColor="@color/blue"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.431"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button10sr8"
+        android:layout_width="82dp"
+        android:layout_height="91dp"
+        android:background="@drawable/bec_button3"
+        android:text="CM"
+        android:textColor="@color/blue"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.326"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:id="@+id/button11sr8"
+        android:layout_width="82dp"
+        android:layout_height="91dp"
+        android:layout_marginBottom="176dp"
+        android:text="LB"
+        android:textSize="25dp"
+        android:textColor="@color/blue"
+        android:background="@drawable/bec_button3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

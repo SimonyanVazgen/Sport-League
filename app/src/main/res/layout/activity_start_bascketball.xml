@@ -11,7 +11,7 @@
         android:id="@+id/randombutton1"
         android:layout_width="200dp"
         android:layout_height="102dp"
-        android:backgroundTint="@color/brown"
+     android:background="@drawable/bec_button2"
         android:onClick="onRandomButtonClick"
         android:text="Нажмите здесь, чтобы выбрать баскетбольные схемы"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,5 +31,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.896"
         app:srcCompat="@drawable/bsr1"
+        android:background="@drawable/bec"
         tools:ignore="MissingConstraints" />
 </androidx.constraintlayout.widget.ConstraintLayout>

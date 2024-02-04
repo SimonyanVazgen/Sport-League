@@ -11,7 +11,7 @@
         android:id="@+id/randombutton"
         android:layout_width="253dp"
         android:layout_height="109dp"
-        android:backgroundTint="@color/green"
+       android:background="@drawable/bec_button"
         android:text="Нажмите здесь, чтобы выбрать футбольные схемы"
         android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -31,6 +31,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/sr1"
+        android:background="@drawable/bec"
         tools:ignore="MissingConstraints" />
 
 
