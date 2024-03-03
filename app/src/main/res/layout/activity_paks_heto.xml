@@ -22,7 +22,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.339"
-        tools:ignore="MissingConstraints" />
+        tools:ignore="MissingConstraints"
+        android:onClick="onRandomButtonClick"/>
 
     <Button
         android:id="@+id/pac2_open"
@@ -45,7 +46,7 @@
         android:id="@+id/imageView"
         android:layout_width="115dp"
         android:layout_height="180dp"
-        android:background="@drawable/bec"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.55"
@@ -59,7 +60,7 @@
         android:id="@+id/imageView8"
         android:layout_width="126dp"
         android:layout_height="249dp"
-        android:background="@drawable/bec"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.571"

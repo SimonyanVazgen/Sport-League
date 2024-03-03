@@ -10,37 +10,57 @@
 
     <Button
         android:id="@+id/Start"
-        android:layout_width="271dp"
-        android:layout_height="131dp"
+        android:layout_width="312dp"
+        android:layout_height="130dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="24dp"
-        android:layout_marginEnd="141dp"
-        android:layout_marginBottom="610dp"
+        android:layout_marginEnd="51dp"
+        android:layout_marginBottom="582dp"
         android:alpha="0.9"
-        android:background="@drawable/bac_button4"
+        android:background="@drawable/messi_himnakani"
 
-        android:text="START       "
-        android:textColor="@color/black"
+        android:gravity="center"
+        android:text="START"
+        android:textColor="@color/white"
         android:textSize="50dp" />
 
     <Button
-        android:id="@+id/card"
-        android:layout_width="270dp"
-        android:layout_height="108dp"
+        android:id="@+id/card_bascetball"
+        android:layout_width="269dp"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerInParent="true"
-        android:layout_marginStart="3dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="70dp"
-        android:layout_marginEnd="141dp"
-        android:layout_marginBottom="336dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginBottom="245dp"
         android:alpha="0.9"
         android:background="@drawable/bac_button4"
-        android:text="MY CARDS "
+        android:text="MY CARDS basketball"
+        android:textColor="@color/black"
+        android:textSize="40dp" />
+
+    <Button
+        android:id="@+id/card"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginBottom="352dp"
+        android:alpha="0.9"
+        android:background="@drawable/bac_button4"
+        android:text="MY CARDS football "
         android:textColor="@color/black"
         android:textSize="40dp" />
 
@@ -50,14 +70,14 @@
         android:layout_height="147dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="495dp"
-        android:layout_marginEnd="2dp"
+        android:layout_marginTop="575dp"
+        android:layout_marginEnd="3dp"
         android:alpha="0.9"
-        android:textStyle="bold"
         android:background="@drawable/bac_button4"
         android:text="MARKET"
         android:textColor="@color/black"
-        android:textSize="24dp" />
+        android:textSize="24dp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/packs"
@@ -67,13 +87,13 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="198dp"
-        android:layout_marginEnd="134dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginTop="212dp"
+        android:layout_marginEnd="123dp"
         android:alpha="0.9"
         android:background="@drawable/bac_button4"
-
-        android:text="PACKS         "
+        android:gravity="center"
+        android:text="PACKS"
         android:textColor="@color/black"
         android:textSize="45dp" />
 
@@ -84,10 +104,10 @@
         android:layout_alignEnd="@+id/packs"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="279dp"
-        android:layout_marginTop="198dp"
-        android:layout_marginEnd="-65dp"
-        android:background="@drawable/bec"
+        android:layout_marginStart="277dp"
+        android:layout_marginTop="226dp"
+        android:layout_marginEnd="-63dp"
+
         app:srcCompat="@drawable/pac1" />
 
     <ImageView
@@ -96,10 +116,10 @@
         android:layout_height="104dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="316dp"
-        android:layout_marginTop="187dp"
+        android:layout_marginStart="317dp"
+        android:layout_marginTop="209dp"
         android:alpha="0.8"
-        android:background="@drawable/bec"
+
         app:srcCompat="@drawable/pack2" />
 
     <ImageView
@@ -109,9 +129,9 @@
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
-        android:layout_marginStart="283dp"
-        android:layout_marginBottom="354dp"
-        android:background="@drawable/bec"
+        android:layout_marginStart="284dp"
+        android:layout_marginBottom="373dp"
+
         app:srcCompat="@drawable/card1" />
 
     <Button
@@ -120,14 +140,15 @@
         android:layout_height="150dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="3dp"
-        android:layout_marginBottom="142dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginBottom="71dp"
         android:alpha="0.9"
-        android:textStyle="bold"
         android:background="@drawable/bac_button4"
         android:text="TRADING"
         android:textColor="@color/black"
-        android:textSize="24dp" />
+        android:textSize="24dp"
+        android:textStyle="bold" />
+
 
     <ImageView
         android:id="@+id/imageView5"
@@ -135,8 +156,8 @@
         android:layout_height="109dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="250dp"
-        android:layout_marginTop="514dp"
+        android:layout_marginStart="240dp"
+        android:layout_marginTop="588dp"
 
 
         app:srcCompat="@drawable/mark" />
@@ -147,23 +168,10 @@
         android:layout_height="126dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="504dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginTop="581dp"
 
         app:srcCompat="@drawable/tre" />
-
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="122dp"
-        android:layout_height="113dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="275dp"
-        android:layout_marginTop="47dp"
-        android:layout_marginEnd="13dp"
-        android:background="@drawable/bec"
-        app:srcCompat="@drawable/cup" />
 
     <Button
         android:id="@+id/logout"
@@ -173,12 +181,78 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="693dp"
-        android:layout_marginEnd="158dp"
-        android:layout_marginBottom="43dp"
+        android:layout_marginTop="733dp"
+        android:layout_marginEnd="157dp"
+        android:layout_marginBottom="3dp"
+        android:background="@drawable/bac_button4"
         android:text="@string/logout"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/yndanurpox"
+        android:layout_width="260dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="18dp"
+        android:layout_marginEnd="95dp"
+        android:layout_marginBottom="736dp"
+        android:gravity="center"
+        android:text="500"
+        android:textColor="@color/white"
+        android:textSize="25dp"
         android:textStyle="bold"
-        android:background="@drawable/bac_button4"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.43"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <Button
+        android:layout_width="123dp"
+        android:layout_height="65dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginBottom="718dp"
+        android:background="@drawable/bec"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.531"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.001"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/money"
+        android:layout_width="47dp"
+        android:layout_height="45dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="199dp"
+        android:layout_marginTop="11dp"
+        android:layout_marginEnd="146dp"
+        android:layout_marginBottom="728dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.604"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/baseline_currency_bitcoin_24" />
+
 
 
 </RelativeLayout>

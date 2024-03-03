@@ -36,16 +36,25 @@
     </com.google.android.material.textfield.TextInputLayout>
 
 
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
-            android:hint="@string/password"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
 
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -59,17 +68,16 @@
 
     <Button
         android:id="@+id/btn_register"
-        android:text="@string/register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
         android:background="@drawable/bac_button4"
-        android:layout_marginTop="10dp">
-
+        android:text="@string/register">
 
 
     </Button>
 
-<TextView
+    <TextView
     android:id="@+id/loginNow"
     android:gravity="center"
     android:textStyle="bold"

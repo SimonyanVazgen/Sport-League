@@ -9,8 +9,8 @@
 
     <Button
         android:id="@+id/button12bsr3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="105dp"
         android:background="@drawable/bec_button5"
         android:text="Button"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -22,8 +22,8 @@
 
     <Button
         android:id="@+id/button13bsr3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="105dp"
         android:background="@drawable/bec_button5"
         android:text="Button"
 
@@ -36,8 +36,8 @@
 
     <Button
         android:id="@+id/button14bsr3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="105dp"
         android:background="@drawable/bec_button5"
         android:text="Button"
 
@@ -50,8 +50,8 @@
 
     <Button
         android:id="@+id/button15bsr3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="105dp"
         android:background="@drawable/bec_button5"
         android:text="Button"
 
@@ -64,8 +64,8 @@
 
     <Button
         android:id="@+id/button16bsr3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="105dp"
         android:background="@drawable/bec_button5"
         android:text="Button"
 
@@ -75,4 +75,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.357" />
+
+    <Button
+        android:id="@+id/next_bs3"
+        android:layout_width="100dp"
+        android:layout_height="105dp"
+        android:background="@drawable/bec_button5"
+        android:text="next"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.951"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.039" />
 </androidx.constraintlayout.widget.ConstraintLayout>

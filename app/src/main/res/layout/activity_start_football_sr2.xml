@@ -174,4 +174,19 @@
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/next_ft2"
+        android:layout_width="87dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/bec_button3"
+
+        android:text="next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.969"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -40,7 +40,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/button123"
         android:layout_width="82dp"
         android:layout_height="91dp"
 
@@ -163,18 +163,45 @@
         app:layout_constraintVertical_bias="0.312"
         tools:ignore="MissingConstraints" />
 
+
     <Button
         android:id="@+id/button11"
         android:layout_width="82dp"
         android:layout_height="91dp"
         android:layout_marginBottom="176dp"
-        android:text="LB"
-        android:textSize="25dp"
-        android:textColor="@color/blue"
         android:background="@drawable/bec_button3"
+        android:text="LB"
+        android:textColor="@color/blue"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintHorizontal_bias="0.048"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView"
+        android:layout_width="85dp"
+        android:layout_height="94dp"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="164dp"
+        tools:layout_editor_absoluteY="90dp"> <!-- Скрыть CardView -->
+        <!-- Содержимое CardView -->
+    </androidx.cardview.widget.CardView>
+
+    <Button
+        android:id="@+id/next_ft"
+        android:layout_width="87dp"
+        android:layout_height="84dp"
+        android:background="@drawable/bec_button3"
+        android:text="next"
+        app:layout_constraintBottom_toTopOf="@+id/button123"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

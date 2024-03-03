@@ -9,41 +9,42 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.bumptech.glide.Glide;
 
-public class My_cards extends AppCompatActivity {
+public class start_basketball_my_cards extends AppCompatActivity {
 
     @Override
     @SuppressLint("MissingInflatedId")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_my_cards);
+        setContentView(R.layout.activity_start_basketball_my_cards);
+
 
         // Define your ImageViews and their corresponding image URLs
-        ImageView imageView1 = findViewById(R.id.imageView);
-        String img1 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/apedipele.png?alt=media&token=cba783b8-24bb-4aed-9023-d77e0cae0a00";
+         ImageView imageView1 = findViewById(R.id.imageView);
+        String img1 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/pngfind.com-nba-2k17-logo-png-2439932.png?alt=media&token=a1570b43-d22b-4c8c-b9b5-87ddffe8c94a";
         Glide.with(this).load(img1).into(imageView1);
 
         ImageView imageView2 = findViewById(R.id.imageView2);
-        String img2 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/haland.png?alt=media&token=db841016-0a48-4856-a753-f69b87b22ead";
+        String img2 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/pngfind.com-nba-2k16-png-2754401.png?alt=media&token=2c82ff16-3ded-43ea-9ea9-b02758d9229f";
         Glide.with(this).load(img2).into(imageView2);
 
         ImageView imageView3 = findViewById(R.id.imageView3);
-        String img3 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/smolarek.png?alt=media&token=4086bb21-b17a-49dc-a6cf-ff7d2c28bebb";
+        String img3 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/pngfind.com-nba-2k16-png-1424710.png?alt=media&token=05d787d0-34cf-491a-9487-c5b36b6bc384";
         Glide.with(this).load(img3).into(imageView3);
 
         ImageView imageView4 = findViewById(R.id.imageView4);
-        String img4 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/sancho.png?alt=media&token=17818fe7-2f6c-4847-ad20-7e69ae2d7a63";
+        String img4 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/pngfind.com-larry-bird-png-3047540.png?alt=media&token=bc2e8c5c-5630-4211-9fb1-639d02c5688a";
         Glide.with(this).load(img4).into(imageView4);
 
         ImageView imageView5 = findViewById(R.id.imageView5);
-        String img5 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/cordoba.png?alt=media&token=5f77fa5e-8ded-4405-b4bc-54b6a997bafe";
+        String img5 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/pngfind.com-kobe-bryant-png-328894.png?alt=media&token=80eadee8-a517-4bec-a71c-90cb4df04e4b";
         Glide.with(this).load(img5).into(imageView5);
 
         ImageView imageView6 = findViewById(R.id.imageView6);
-        String img6 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/donarumma.png?alt=media&token=603b0df6-5884-42cd-9bef-e42e1c2d4553";
+        String img6 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/pngfind.com-kawhi-leonard-png-1329602.png?alt=media&token=7c30a97f-b24d-403b-8113-569adc0ab26d";
         Glide.with(this).load(img6).into(imageView6);
 
 
-        
+
 
 
         // Set click listeners for each ImageView

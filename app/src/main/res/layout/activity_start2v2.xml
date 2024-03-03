@@ -45,7 +45,7 @@
         android:layout_height="116dp"
         android:layout_marginTop="276dp"
         android:layout_marginEnd="136dp"
-        android:background="@drawable/bec_button2"
+        android:background="@drawable/bac_button4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/baseline_connect_without_contact_24" />

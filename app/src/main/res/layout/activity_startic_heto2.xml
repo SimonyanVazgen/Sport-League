@@ -70,7 +70,7 @@
         android:layout_width="78dp"
         android:layout_height="87dp"
         android:layout_marginStart="316dp"
-        android:background="@drawable/bec"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -82,7 +82,7 @@
         android:layout_width="82dp"
         android:layout_height="96dp"
         android:layout_marginStart="316dp"
-        android:background="@drawable/bec"
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -95,7 +95,7 @@
         android:layout_height="89dp"
         android:layout_marginTop="220dp"
         android:layout_marginEnd="24dp"
-        android:background="@drawable/bec"
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/jordan" />
@@ -106,6 +106,7 @@
         android:layout_height="99dp"
         android:layout_marginTop="532dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.46"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/vs2" />
