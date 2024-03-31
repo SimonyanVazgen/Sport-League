@@ -3,6 +3,8 @@ package com.example.sport_league;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +18,37 @@ public class start_basketball_my_cards extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_basketball_my_cards);
+
+
+
+        Button button1 = findViewById(R.id.gndak);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent5 = new Intent(start_basketball_my_cards.this, My_cards.class);
+                startActivity(intent5);
+            }
+
+        });
+
+
+        Button button2 = findViewById(R.id.basketballgndak);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent5 = new Intent(start_basketball_my_cards.this, start_basketball_my_cards.class);
+                startActivity(intent5);
+            }
+
+        });
+
+
+
+
+
+
+
+
 
 
         // Define your ImageViews and their corresponding image URLs

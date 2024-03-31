@@ -4,11 +4,19 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.util.Log;
+import android.view.View;
+import android.view.animation.AlphaAnimation;
+import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 import android.widget.Button;
-
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.CustomTarget;
@@ -17,43 +25,46 @@ import com.bumptech.glide.request.transition.Transition;
 public class start_football_sr extends AppCompatActivity {
 
     private static final int IMAGE_SELECTION_REQUEST = 1;
-    // Adjusted the array size to 11 since you have 11 buttons
-    private boolean[] buttonImagesSet = new boolean[11]; // Tracking state for each button
-    private int selectedButtonId = 0; // To track the currently selected button
+    private Button[] buttons = new Button[11];
+    private int selectedButtonId;
+    private TextView ratingTextView;
+    private int[] cardRatings = {98, 99, 96, 99, 96, 97, 98, 92, 96, 96, 82};
+    private View lockBtn;
+    private boolean selectionsLocked = false;
 
     @Override
-    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_start_football_sr);
+        setContentView(R.layout.start_football_sr);
 
-        // Initialize buttonImagesSet to false
-        for (int i = 0; i < buttonImagesSet.length; i++) {
-            buttonImagesSet[i] = false;
-        }
+        lockBtn = findViewById(R.id.lockBtn);
+        ratingTextView = findViewById(R.id.ratingTextView);
 
-        // Setup listeners for all buttons
-        int[] buttonIds = new int[]{
-                R.id.button, R.id.button2, R.id.button123, R.id.button4,
-                R.id.button5, R.id.button6, R.id.button7, R.id.button8,
-                R.id.button9, R.id.button10, R.id.button11
+        lockBtn.setOnClickListener(v -> {
+            if (!selectionsLocked) {
+                startCountdown();
+            }
+        });
+
+        int[] buttonIds = {
+                R.id.button, R.id.button2, R.id.button123, R.id.button4, R.id.button5,
+                R.id.button6, R.id.button7, R.id.button8, R.id.button9, R.id.button10, R.id.button11
         };
 
-        for (int buttonId : buttonIds) {
-            setupButtonClickListener(buttonId);
+        for (int i = 0; i < buttonIds.length; i++) {
+            final int index = i;
+            buttons[i] = findViewById(buttonIds[i]);
+            buttons[i].setOnClickListener(v -> {
+                selectedButtonId = v.getId();
+                showRating(index);
+                selectCard();
+            });
         }
-
-        // Check and update the state of the "Next" button initially
-        checkNextButtonState();
     }
 
-    private void setupButtonClickListener(int buttonId) {
-        Button button = findViewById(buttonId);
-        button.setOnClickListener(v -> {
-            Intent intent = new Intent(start_football_sr.this, My_cards.class);
-            startActivityForResult(intent, IMAGE_SELECTION_REQUEST);
-            selectedButtonId = buttonId; // Remember which button was clicked
-        });
+    private void selectCard() {
+        Intent intent = new Intent(this, My_cards.class);
+        startActivityForResult(intent, IMAGE_SELECTION_REQUEST);
     }
 
     @Override
@@ -61,76 +72,64 @@ public class start_football_sr extends AppCompatActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (requestCode == IMAGE_SELECTION_REQUEST && resultCode == RESULT_OK && data != null) {
             String imageUri = data.getStringExtra("imageUri");
-            if (selectedButtonId != 0) { // Check if a valid button was selected
-                Button button = findViewById(selectedButtonId);
-                Glide.with(this).load(imageUri).into(new CustomTarget<Drawable>() {
-                    @Override
-                    public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
-                        button.setBackground(resource);
-                        updateButtonImageSetState(selectedButtonId, true);
-                    }
+            Button buttonToUpdate = findViewById(selectedButtonId);
+            Glide.with(this).load(imageUri).into(new CustomTarget<Drawable>() {
+                @Override
+                public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                    buttonToUpdate.setBackground(resource);
+                }
 
-                    @Override
-                    public void onLoadCleared(@Nullable Drawable placeholder) {
-                    }
-                });
-            }
-        }
-    }
-
-    private void updateButtonImageSetState(int buttonId, boolean state) {
-        int index = -1;
-        if (buttonId == R.id.button) {
-            index = 0;
-        } else if (buttonId == R.id.button2) {
-            index = 1;
-        } else if (buttonId == R.id.button123) {
-            index = 2;
-        } else if (buttonId == R.id.button4) {
-            index = 3;
-        } else if (buttonId == R.id.button5) {
-            index = 4;
-        } else if (buttonId == R.id.button6) {
-            index = 5;
-        } else if (buttonId == R.id.button7) {
-            index = 6;
-        } else if (buttonId == R.id.button8) {
-            index = 7;
-        } else if (buttonId == R.id.button9) {
-            index = 8;
-        } else if (buttonId == R.id.button10) {
-            index = 9;
-        } else if (buttonId == R.id.button11) {
-            index = 10;
-        }
-
-        if (index != -1) {
-            buttonImagesSet[index] = state;
-            checkNextButtonState();
-        }
-    }
-
-
-    private void checkNextButtonState() {
-        Button nextButton = findViewById(R.id.next_ft);
-        boolean allSet = true;
-
-        for (boolean setImage : buttonImagesSet) {
-            if (!setImage) {
-                allSet = false;
-                break;
-            }
-        }
-
-        nextButton.setEnabled(allSet); // Enable the "Next" button only if all images are set
-
-        if (allSet) {
-            nextButton.setOnClickListener(v -> {
-                Intent intent = new Intent(start_football_sr.this, football_next.class);
-                startActivity(intent);
+                @Override
+                public void onLoadCleared(@Nullable Drawable placeholder) {
+                }
             });
-        } else {
-            nextButton.setOnClickListener(null); // Remove click listener if not all images are set
         }
+    }
+    private void startCountdown() {
+        new CountDownTimer(3000, 2000) {
+            public void onTick(long millisUntilFinished) {
+                ((Button) lockBtn).setText("Unlock " + millisUntilFinished / 1000);
+            }
+
+            public void onFinish() {
+                ((Button) lockBtn).setText("Unlock");
+                animateButtonDisappearance();
+                selectionsLocked = true;
+                disableCardSelection();
+            }
+        }.start();
+    }
+
+    private void disableCardSelection() {
+        for (Button button : buttons) {
+            button.setClickable(false);
+        }
+    }
+
+    private void animateButtonDisappearance() {
+        AlphaAnimation fadeOut = new AlphaAnimation(1.0f, 0.0f);
+        fadeOut.setDuration(1000);
+        fadeOut.setAnimationListener(new Animation.AnimationListener() {
+            @Override
+            public void onAnimationStart(Animation animation) {
+            }
+
+            @Override
+            public void onAnimationEnd(Animation animation) {
+                lockBtn.setVisibility(View.GONE);
+            }
+
+            @Override
+            public void onAnimationRepeat(Animation animation) {
+            }
+        });
+
+        lockBtn.startAnimation(fadeOut);
+    }
+
+    private void showRating(int index) {
+        String ratingText = "Rating: " + cardRatings[index];
+        ratingTextView.setText(ratingText);
+        ratingTextView.setVisibility(View.VISIBLE);
     }
 }

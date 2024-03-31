@@ -1,21 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/dasht"
-    tools:context=".start_football_sr">
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <Button
+        android:id="@+id/lockBtn"
+        android:layout_width="87dp"
+        android:layout_height="84dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="630dp"
+        android:background="@drawable/bec_button3"
+        android:text="lock"
+        app:layout_constraintBottom_toTopOf="@+id/button123"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="82dp"
         android:layout_height="91dp"
 
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="218dp"
+        android:layout_marginBottom="437dp"
+        android:background="@drawable/bec_button3"
         android:text="LW"
         android:textColor="@color/blue"
         android:textSize="20dp"
-        android:background="@drawable/bec_button3"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.215"
@@ -28,6 +49,10 @@
         android:id="@+id/button2"
         android:layout_width="82dp"
         android:layout_height="91dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="14dp"
+        android:layout_marginBottom="346dp"
         android:background="@drawable/bec_button3"
         android:text="CM"
         android:textColor="@color/blue"
@@ -44,9 +69,13 @@
         android:layout_width="82dp"
         android:layout_height="91dp"
 
-        android:text="ST"
+        android:layout_alignParentEnd="true"
 
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="163dp"
+        android:layout_marginBottom="539dp"
         android:background="@drawable/bec_button3"
+        android:text="ST"
         android:textColor="@color/blue"
         android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -61,8 +90,10 @@
         android:id="@+id/button4"
         android:layout_width="82dp"
         android:layout_height="91dp"
-        android:layout_marginEnd="20dp"
-        android:layout_marginBottom="176dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="198dp"
         android:background="@drawable/bec_button3"
         android:text="RB"
         android:textColor="@color/blue"
@@ -75,12 +106,15 @@
         android:id="@+id/button5"
         android:layout_width="82dp"
         android:layout_height="91dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
         android:layout_marginStart="116dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginEnd="90dp"
+        android:layout_marginBottom="125dp"
         android:background="@drawable/bec_button3"
         android:text="CB"
-        android:textSize="25dp"
         android:textColor="@color/blue"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints" />
@@ -89,12 +123,14 @@
         android:id="@+id/button6"
         android:layout_width="82dp"
         android:layout_height="91dp"
-        android:layout_marginEnd="104dp"
-        android:layout_marginBottom="120dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="207dp"
+        android:layout_marginBottom="128dp"
         android:background="@drawable/bec_button3"
         android:text="CB"
-        android:textSize="25dp"
         android:textColor="@color/blue"
+        android:textSize="25dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         tools:ignore="MissingConstraints" />
@@ -103,6 +139,10 @@
         android:id="@+id/button7"
         android:layout_width="82dp"
         android:layout_height="91dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="311dp"
+        android:layout_marginBottom="331dp"
         android:background="@drawable/bec_button3"
         android:text="CM"
         android:textColor="@color/blue"
@@ -119,6 +159,10 @@
         android:id="@+id/button8"
         android:layout_width="82dp"
         android:layout_height="91dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="155dp"
+        android:layout_marginBottom="22dp"
         android:background="@drawable/bec_button3"
         android:text="GK"
         android:textColor="@color/blue"
@@ -135,6 +179,10 @@
         android:id="@+id/button9"
         android:layout_width="82dp"
         android:layout_height="91dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="160dp"
+        android:layout_marginBottom="294dp"
         android:background="@drawable/bec_button3"
         android:text="CM"
         android:textColor="@color/blue"
@@ -151,6 +199,10 @@
         android:id="@+id/button10"
         android:layout_width="82dp"
         android:layout_height="91dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="103dp"
+        android:layout_marginBottom="433dp"
         android:background="@drawable/bec_button3"
         android:text="RW"
         android:textColor="@color/blue"
@@ -163,12 +215,14 @@
         app:layout_constraintVertical_bias="0.312"
         tools:ignore="MissingConstraints" />
 
-
     <Button
         android:id="@+id/button11"
         android:layout_width="82dp"
         android:layout_height="91dp"
-        android:layout_marginBottom="176dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="314dp"
+        android:layout_marginBottom="172dp"
         android:background="@drawable/bec_button3"
         android:text="LB"
         android:textColor="@color/blue"
@@ -181,8 +235,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
-        android:layout_width="85dp"
-        android:layout_height="94dp"
+        android:layout_width="19dp"
+        android:layout_height="14dp"
         android:visibility="gone"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="164dp"
@@ -190,18 +244,26 @@
         <!-- Содержимое CardView -->
     </androidx.cardview.widget.CardView>
 
-    <Button
-        android:id="@+id/next_ft"
-        android:layout_width="87dp"
-        android:layout_height="84dp"
-        android:background="@drawable/bec_button3"
-        android:text="next"
-        app:layout_constraintBottom_toTopOf="@+id/button123"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/textViewGo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO"
+        android:textSize="250dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:visibility="gone"/>
+
+
+    <TextView
+        android:id="@+id/ratingTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/lockBtn"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone" />
+
+</RelativeLayout>

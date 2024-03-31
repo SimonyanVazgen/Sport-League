@@ -7,6 +7,22 @@
     android:background="@drawable/dasht"
     tools:context=".start_football_sr7">
 
+
+    <TextView
+        android:id="@+id/textViewGo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO"
+        android:textSize="100dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+
+
+
     <Button
         android:id="@+id/buttonsr7"
         android:layout_width="82dp"
@@ -179,11 +195,11 @@
 
 
     <Button
-        android:id="@+id/next_ft7"
+        android:id="@+id/lockBtn"
         android:layout_width="87dp"
         android:layout_height="84dp"
         android:background="@drawable/bec_button3"
-        android:text="next"
+        android:text="lock"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"

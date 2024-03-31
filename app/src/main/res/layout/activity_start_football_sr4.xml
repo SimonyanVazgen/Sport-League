@@ -7,6 +7,19 @@
     android:background="@drawable/dasht"
     tools:context=".start_football_sr4">
 
+    <TextView
+        android:id="@+id/textViewGo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="GO"
+        android:textSize="100dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_centerInParent="true"
+        android:visibility="gone"
+        tools:ignore="MissingConstraints" />
+
+
     <Button
         android:id="@+id/buttonsr4"
         android:layout_width="82dp"
@@ -177,15 +190,14 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/next_ft4"
+        android:id="@+id/lockBtn"
         android:layout_width="87dp"
         android:layout_height="84dp"
         android:background="@drawable/bec_button3"
-        android:text="next"
+        android:text="lock"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.95"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
