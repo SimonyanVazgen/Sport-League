@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
@@ -32,6 +33,7 @@ public class My_cards extends AppCompatActivity {
     private String img18;
     private String img19;
 
+
     public static HashSet<String> selectedImageUris = new HashSet<>();
 
 
@@ -40,6 +42,8 @@ public class My_cards extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_cards);
+
+
 
 
         ImageView imageView1 = findViewById(R.id.imageView);
@@ -135,33 +139,148 @@ public class My_cards extends AppCompatActivity {
 
 
 
-        imageView1.setOnClickListener(v -> returnResult(img1));
-        imageView2.setOnClickListener(v -> returnResult(img2));
-        imageView3.setOnClickListener(v -> returnResult(img3));
-        imageView4.setOnClickListener(v -> returnResult(img4));
-        imageView5.setOnClickListener(v -> returnResult(img5));
-        imageView6.setOnClickListener(v -> returnResult(img6));
-        imageView7.setOnClickListener(v -> returnResult(img7));
-        imageView8.setOnClickListener(v -> returnResult(img8));
-        imageView9.setOnClickListener(v -> returnResult(img9));
-        imageView10.setOnClickListener(v -> returnResult(img10));
-        imageView11.setOnClickListener(v -> returnResult(img11));
-        imageView12.setOnClickListener(v -> returnResult(img12));
-        imageView13.setOnClickListener(v -> returnResult(img13));
-        imageView14.setOnClickListener(v -> returnResult(img14));
-        imageView15.setOnClickListener(v -> returnResult(img15));
-        imageView16.setOnClickListener(v -> returnResult(img16));
-        imageView17.setOnClickListener(v -> returnResult(img17));
-        imageView18.setOnClickListener(v -> returnResult(img18));
-        imageView19.setOnClickListener(v -> returnResult(img19));
+        imageView1.setOnClickListener(v -> {String rating = "98"; returnResult(img1, imageView1, rating);});
+        imageView2.setOnClickListener(v -> {String rating = "99";returnResult(img2, imageView2,rating);});
+        imageView3.setOnClickListener(v -> {String rating = "96";returnResult(img3, imageView3,rating);});
+        imageView4.setOnClickListener(v -> {String rating = "96";returnResult(img4, imageView4,rating);});
+        imageView5.setOnClickListener(v -> {String rating = "97";returnResult(img5, imageView5,rating);});
+        imageView6.setOnClickListener(v -> {String rating = "99";returnResult(img6, imageView6,rating);});
+        imageView7.setOnClickListener(v -> {String rating = "98";returnResult(img7, imageView7,rating);});
+        imageView8.setOnClickListener(v -> {String rating = "92";returnResult(img8, imageView8,rating);});
+        imageView9.setOnClickListener(v -> {String rating = "96";returnResult(img9, imageView9,rating);});
+        imageView10.setOnClickListener(v -> {String rating = "96";returnResult(img10, imageView10,rating);});
+        imageView11.setOnClickListener(v -> {String rating = "95";returnResult(img11, imageView11,rating);});
+        imageView12.setOnClickListener(v -> {String rating = "97";returnResult(img12, imageView12,rating);});
+        imageView13.setOnClickListener(v -> {String rating = "96";returnResult(img13, imageView13,rating);});
+        imageView14.setOnClickListener(v -> {String rating = "97";returnResult(img14, imageView14,rating);});
+        imageView15.setOnClickListener(v -> {String rating = "96";returnResult(img15, imageView15,rating);});
+        imageView16.setOnClickListener(v -> {String rating = "97";returnResult(img16, imageView16,rating);});
+        imageView17.setOnClickListener(v -> {String rating = "95";returnResult(img17, imageView17,rating);});
+        imageView18.setOnClickListener(v -> {String rating = "97";returnResult(img18, imageView18,rating);});
+        imageView19.setOnClickListener(v -> {String rating = "95";returnResult(img19, imageView19,rating);});
+
+
+
+
+
+
+        if (selectedImageUris.contains(img1)) {
+            imageView1.setVisibility(View.GONE);
+        }
+
+        if (selectedImageUris.contains(img2)) {
+            imageView2.setVisibility(View.GONE);
+        }
+
+        if (selectedImageUris.contains(img3)) {
+            imageView3.setVisibility(View.GONE);
+        }
+
+        if (selectedImageUris.contains(img4)) {
+            imageView4.setVisibility(View.GONE);
+        }
+
+
+
+        if (selectedImageUris.contains(img5)) {
+            imageView5.setVisibility(View.GONE);
+        }
+
+
+        if (selectedImageUris.contains(img6)) {
+            imageView6.setVisibility(View.GONE);
+        }
+
+
+        if (selectedImageUris.contains(img7)) {
+            imageView7.setVisibility(View.GONE);
+        }
+
+
+        if (selectedImageUris.contains(img8)) {
+            imageView8.setVisibility(View.GONE);
+        }
+
+
+
+        if (selectedImageUris.contains(img9)) {
+            imageView9.setVisibility(View.GONE);
+        }
+
+
+
+
+        if (selectedImageUris.contains(img10)) {
+            imageView10.setVisibility(View.GONE);
+        }
+
+
+
+        if (selectedImageUris.contains(img11)) {
+            imageView11.setVisibility(View.GONE);
+        }
+
+
+
+        if (selectedImageUris.contains(img12)) {
+            imageView12.setVisibility(View.GONE);
+        }
+
+
+
+        if (selectedImageUris.contains(img13)) {
+            imageView13.setVisibility(View.GONE);
+        }
+
+
+
+        if (selectedImageUris.contains(img14)) {
+            imageView14.setVisibility(View.GONE);
+        }
+
+
+
+        if (selectedImageUris.contains(img15)) {
+            imageView15.setVisibility(View.GONE);
+        }
+
+
+        if (selectedImageUris.contains(img16)) {
+            imageView16.setVisibility(View.GONE);
+        }
+
+
+        if (selectedImageUris.contains(img17)) {
+            imageView17.setVisibility(View.GONE);
+        }
+
+
+
+        if (selectedImageUris.contains(img18)) {
+            imageView18.setVisibility(View.GONE);
+        }
+
+
+        if (selectedImageUris.contains(img19)) {
+            imageView19.setVisibility(View.GONE);
+        }
+
+
 
     }
 
-    private void returnResult(String imageUri) {
-        Log.d("My_cards", "Returning result: " + imageUri); // Debug log
+
+    private void returnResult(String imageUri, ImageView imageView, String rating) {
+        Log.d("My_cards", "Returning result: " + imageUri + " with rating: " + rating);
+        selectedImageUris.add(imageUri); // Track the selected URIs
         Intent resultIntent = new Intent();
         resultIntent.putExtra("imageUri", imageUri);
+        resultIntent.putExtra("cardRating", rating); // Include the rating in the result
         setResult(RESULT_OK, resultIntent);
+        imageView.setVisibility(View.GONE); // Hide the ImageView
         finish();
     }
+
+
+
 }

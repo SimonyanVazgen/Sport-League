@@ -8,31 +8,14 @@
 
 
     <Button
-        android:id="@+id/lockBtn"
-        android:layout_width="87dp"
-        android:layout_height="84dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="630dp"
-        android:background="@drawable/bec_button3"
-        android:text="lock"
-        app:layout_constraintBottom_toTopOf="@+id/button123"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.95"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
         android:id="@+id/button"
         android:layout_width="82dp"
         android:layout_height="91dp"
 
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="218dp"
-        android:layout_marginBottom="437dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginBottom="487dp"
         android:background="@drawable/bec_button3"
         android:text="LW"
         android:textColor="@color/blue"
@@ -51,8 +34,8 @@
         android:layout_height="91dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="14dp"
-        android:layout_marginBottom="346dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginBottom="372dp"
         android:background="@drawable/bec_button3"
         android:text="CM"
         android:textColor="@color/blue"
@@ -73,7 +56,7 @@
 
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="163dp"
-        android:layout_marginBottom="539dp"
+        android:layout_marginBottom="591dp"
         android:background="@drawable/bec_button3"
         android:text="ST"
         android:textColor="@color/blue"
@@ -92,8 +75,8 @@
         android:layout_height="91dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="6dp"
-        android:layout_marginBottom="198dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="234dp"
         android:background="@drawable/bec_button3"
         android:text="RB"
         android:textColor="@color/blue"
@@ -141,8 +124,8 @@
         android:layout_height="91dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="311dp"
-        android:layout_marginBottom="331dp"
+        android:layout_marginEnd="295dp"
+        android:layout_marginBottom="370dp"
         android:background="@drawable/bec_button3"
         android:text="CM"
         android:textColor="@color/blue"
@@ -181,8 +164,8 @@
         android:layout_height="91dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="160dp"
-        android:layout_marginBottom="294dp"
+        android:layout_marginEnd="162dp"
+        android:layout_marginBottom="328dp"
         android:background="@drawable/bec_button3"
         android:text="CM"
         android:textColor="@color/blue"
@@ -201,8 +184,8 @@
         android:layout_height="91dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="103dp"
-        android:layout_marginBottom="433dp"
+        android:layout_marginEnd="78dp"
+        android:layout_marginBottom="486dp"
         android:background="@drawable/bec_button3"
         android:text="RW"
         android:textColor="@color/blue"
@@ -221,8 +204,8 @@
         android:layout_height="91dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="314dp"
-        android:layout_marginBottom="172dp"
+        android:layout_marginEnd="302dp"
+        android:layout_marginBottom="204dp"
         android:background="@drawable/bec_button3"
         android:text="LB"
         android:textColor="@color/blue"
@@ -257,13 +240,32 @@
         android:layout_centerInParent="true"
         android:visibility="gone"/>
 
-
     <TextView
         android:id="@+id/ratingTextView"
+        android:layout_width="127dp"
+        android:layout_height="92dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="257dp"
+        android:layout_marginBottom="681dp"
+        android:gravity="top"
+        android:text="Rating"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/viewTeamButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/lockBtn"
-        android:layout_centerHorizontal="true"
-        android:visibility="gone" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/bec_button3"
+        android:text="View Team" />
+
 
 </RelativeLayout>

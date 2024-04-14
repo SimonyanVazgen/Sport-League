@@ -8,7 +8,7 @@
     tools:context=".start_football">
 
     <ImageButton
-        android:id="@+id/randomImageView"
+        android:id="@+id/ImageView"
         android:layout_width="277dp"
         android:layout_height="208dp"
         android:background="@drawable/bec"
@@ -16,7 +16,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/sr1"
         tools:ignore="MissingConstraints" />
 
 

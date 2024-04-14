@@ -32,10 +32,15 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
 
+    implementation("androidx.navigation:navigation-fragment:2.6.0")
+    implementation("androidx.navigation:navigation-ui:2.6.0")
     val fragment_version = "1.6.1"
     implementation ("com.google.firebase:firebase-database:20.3.1")
     implementation("com.github.bumptech.glide:glide:4.13.2")

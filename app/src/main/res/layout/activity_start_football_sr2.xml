@@ -194,12 +194,13 @@
         android:id="@+id/textViewGo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="GO"
-        android:textSize="100dp"
-        android:textColor="@color/white"
-        android:textStyle="bold"
         android:layout_centerInParent="true"
+        android:text="GO"
+        android:textColor="@color/white"
+        android:textSize="250dp"
+        android:textStyle="bold"
         android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
         tools:ignore="MissingConstraints" />
 
 

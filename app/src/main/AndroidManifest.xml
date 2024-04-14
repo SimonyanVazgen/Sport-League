@@ -21,14 +21,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Sport_league"
         tools:targetApi="31">
-
+        <activity
+            android:name=".TeamDisplayActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Sport_league" />
         <activity
             android:name=".basketball_next"
             android:exported="false" />
         <activity
             android:name=".start_basketball_my_cards"
             android:exported="false" />
-
         <activity
             android:name=".treding_heto"
             android:exported="false" />

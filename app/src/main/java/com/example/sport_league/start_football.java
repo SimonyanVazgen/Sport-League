@@ -2,11 +2,15 @@ package com.example.sport_league;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
+import com.bumptech.glide.Glide;
+
 import java.util.Random;
 
 public class start_football extends AppCompatActivity {
@@ -15,80 +19,72 @@ public class start_football extends AppCompatActivity {
     private Button leftButton;
     private Button rightButton;
     private int currentImageIndex = 0;
-    private int[] imageArray1 = {
-            R.drawable.sr1, R.drawable.sr2, R.drawable.sr3, R.drawable.sr4,
-            R.drawable.sr5, R.drawable.sr6, R.drawable.sr7, R.drawable.sr8
-    };
-    private Class<? extends AppCompatActivity>[] activityArray = new Class[]{
-            start_football_sr.class, start_football_sr2.class, start_football_sr3.class,
-            start_football_sr4.class, start_football_sr5.class, start_football_sr6.class,
-            start_football_sr7.class, start_football_sr8.class
-    };
+    private String[] imageUrls = new String[]{
+            "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/sr1.jpg?alt=media&token=23f7309b-bf59-41ee-8da4-8371182fbb70",
+            "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/sr2.jpg?alt=media&token=4a937abd-737c-4c0f-a6ab-be5da3cf93cf",
+            "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/sr3.jpg?alt=media&token=ae725bbc-1241-46cf-9129-efbf19c9e7db",
+            "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/sr4.jpg?alt=media&token=4c8c561c-91c1-4bdd-a82d-4b952a4bb122",
+            "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/sr5.jpg?alt=media&token=9da5b5f4-d9f3-4b9f-be79-dfde96b8422d",
+            "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/sr6.jpg?alt=media&token=8e6e9d99-0f81-4209-b652-1bccb58f928f",
+            "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/sr7.jpg?alt=media&token=3514d97f-b0eb-4879-bd25-463304d0e269",
+            "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/sr8.jpg?alt=media&token=f0d649df-9af6-4baa-a000-2c08734a8212"};
 
+
+    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start_football);
 
-        randomImageView = findViewById(R.id.randomImageView);
-        leftButton = findViewById(R.id.leftButton); // Replace with your actual left button ID
-        rightButton = findViewById(R.id.rightButton); // Replace with your actual right button ID
+        randomImageView = findViewById(R.id.ImageView);
+        leftButton = findViewById(R.id.leftButton);
+        rightButton = findViewById(R.id.rightButton);
 
-        // Initial image displayed
-        randomImageView.setImageResource(imageArray1[currentImageIndex]);
 
-        // Left button click listener
+        Glide.with(this).load(imageUrls[currentImageIndex]).into(randomImageView);
+
+
+
         leftButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (currentImageIndex > 0) {
                     currentImageIndex--;
                 } else {
-                    currentImageIndex = imageArray1.length - 1; // go to the last image if we've reached the beginning
+                    currentImageIndex = imageUrls.length - 1;
                 }
-                randomImageView.setImageResource(imageArray1[currentImageIndex]);
+                updateImageView();
             }
         });
-
-        // Right button click listener
         rightButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (currentImageIndex < imageArray1.length - 1) {
+                if (currentImageIndex < imageUrls.length - 1) {
                     currentImageIndex++;
                 } else {
-                    currentImageIndex = 0; // go back to the first image if we've reached the end
+                    currentImageIndex = 0;
                 }
-                randomImageView.setImageResource(imageArray1[currentImageIndex]);
+                updateImageView();
             }
         });
+
 
         randomImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // Handle click on the image, for example, start a new activity
-                startRandomActivity();
+                // Start the activity corresponding to the current image
+                Intent intent = new Intent(start_football.this, start_football_sr.class); // Or use dynamic class selection if needed
+                startActivity(intent);
             }
         });
+
     }
 
-    public void onRandomButtonClick(View view) {
-        // Set a random image when the button is clicked
-        int randomIndex1 = new Random().nextInt(imageArray1.length);
-        randomImageView.setImageResource(imageArray1[randomIndex1]);
+    private void updateImageView() {
+        Glide.with(this)
+                .load(imageUrls[currentImageIndex])
+                .into(randomImageView);
     }
 
-    private void startRandomActivity() {
-        // Select a random activity from the activityArray
-        int randomIndex = new Random().nextInt(activityArray.length);
-        Class<? extends AppCompatActivity> selectedActivity = activityArray[randomIndex];
-
-        // Start the selected activity
-        Intent intent = new Intent(this, selectedActivity);
-        startActivity(intent);
-    }
 
 }
-
-    // Rest of your code
-    // ...
