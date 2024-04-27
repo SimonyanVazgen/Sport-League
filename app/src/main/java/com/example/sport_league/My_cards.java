@@ -12,7 +12,6 @@ import java.util.HashSet;
 
 public class My_cards extends AppCompatActivity {
 
-    // Static variable to keep track of selected image URIs
     private String img2;
     private String img1;
     private String img3;
@@ -74,13 +73,16 @@ public class My_cards extends AppCompatActivity {
         img7 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/dybala.png?alt=media&token=be64c1cf-df4c-48a8-8aa3-557e105c0ad3";
         Glide.with(this).load(img7).into(imageView7);
 
+
         ImageView imageView8 = findViewById(R.id.imageView8);
         img8 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/ferrari.png?alt=media&token=ac707f26-7ae9-4678-ae46-867c2b334462";
         Glide.with(this).load(img8).into(imageView8);
 
+
         ImageView imageView9 = findViewById(R.id.imageView9);
         img9 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/fred.png?alt=media&token=b4b98187-407f-4f90-86aa-02e4475a1d22";
         Glide.with(this).load(img9).into(imageView9);
+
 
         ImageView imageView10 = findViewById(R.id.imageView10);
         img10 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/gomez.png?alt=media&token=a8d31bfa-248d-464c-b62d-1bf6b4ba6fbf";
@@ -90,7 +92,6 @@ public class My_cards extends AppCompatActivity {
         ImageView imageView11 = findViewById(R.id.imageView11);
         img11 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/insigne.png?alt=media&token=778b7fd7-8aae-4c39-b651-d70c5ba82827";
         Glide.with(this).load(img11).into(imageView11);
-
 
 
         ImageView imageView12 = findViewById(R.id.imageView12);
@@ -106,9 +107,6 @@ public class My_cards extends AppCompatActivity {
         ImageView imageView14 = findViewById(R.id.imageView14);
         img14 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/konate.png?alt=media&token=14362e64-01d5-401c-ad86-54a0f09024ce";
         Glide.with(this).load(img14).into(imageView14);
-
-
-
 
 
         ImageView imageView15 = findViewById(R.id.imageView15);
@@ -272,12 +270,12 @@ public class My_cards extends AppCompatActivity {
 
     private void returnResult(String imageUri, ImageView imageView, String rating) {
         Log.d("My_cards", "Returning result: " + imageUri + " with rating: " + rating);
-        selectedImageUris.add(imageUri); // Track the selected URIs
+        selectedImageUris.add(imageUri);
         Intent resultIntent = new Intent();
         resultIntent.putExtra("imageUri", imageUri);
-        resultIntent.putExtra("cardRating", rating); // Include the rating in the result
+        resultIntent.putExtra("cardRating", rating);
         setResult(RESULT_OK, resultIntent);
-        imageView.setVisibility(View.GONE); // Hide the ImageView
+        imageView.setVisibility(View.GONE);
         finish();
     }
 
