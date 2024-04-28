@@ -32,6 +32,10 @@ public class start_football_sr extends TeamDisplayActivity {
     private int selectedButtonId;
     private Button button1;
     private static final int TEAM_DISPLAY_REQUEST_CODE = 1;
+    private int scoreWins = 0;
+    private int scoreLosses = 0;
+    private static final int MY_CARDS_REQUEST_CODE = 1;
+
 
 
 
@@ -42,6 +46,8 @@ public class start_football_sr extends TeamDisplayActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_football_sr);
         button1  = findViewById(R.id.viewTeamButton);
+
+        scoreTextView = findViewById(R.id.scoreTextView);
 
 
         button1.setOnClickListener(v -> {
@@ -105,6 +111,7 @@ public class start_football_sr extends TeamDisplayActivity {
                     }
                 }
             }
+
             if (requestCode == 1 && resultCode == Activity.RESULT_OK && data != null) {
                 String imageUri = data.getStringExtra("imageUri");
                 Button buttonToUpdate = findViewById(this.selectedButtonId);
@@ -131,6 +138,17 @@ public class start_football_sr extends TeamDisplayActivity {
         } else {
             Toast.makeText(this, "Maximum of 11 cards are already selected.", Toast.LENGTH_SHORT).show();
         }
+
+
+        Button button = findViewById(R.id.resultButton);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(start_football_sr.this, start_football.class);
+                startActivity(intent);
+            }
+
+        });
 
 
 
@@ -167,7 +185,7 @@ public class start_football_sr extends TeamDisplayActivity {
 
                 @Override
                 public void onAnimationRepeat(Animation animation) {
-                   
+
                 }
             });
 
@@ -201,36 +219,42 @@ public class start_football_sr extends TeamDisplayActivity {
     }
 
 
-
     private void compareRatings(String newRating) {
-        int newRatingValue = Integer.parseInt(newRating);
-        int sumOfRatings = 0;
-        int numberOfCards = 0;
+        try {
+            int newRatingValue = Integer.parseInt(newRating);
+            int sumOfRatings = 0;
+            for (String rating : cardRatingsMap.values()) {
+                sumOfRatings += Integer.parseInt(rating);
+            }
+            int averageRating = sumOfRatings / cardRatingsMap.size();
 
-        // Loop through all the selected card ratings to get the sum
-        for (String rating : cardRatingsMap.values()) {
-            sumOfRatings += Integer.parseInt(rating);
-            numberOfCards++;
-        }
-
-        // If 11 cards are selected, compare the average rating with the new rating
-        if (numberOfCards == 11) {
-            int averageRating = sumOfRatings / numberOfCards;
-
-            String comparisonResult;
             if (newRatingValue > averageRating) {
-                comparisonResult = "New rating is higher than the average of selected cards.";
+                scoreWins++;
             } else if (newRatingValue < averageRating) {
-                comparisonResult = "New rating is lower than the average of selected cards.";
-            } else {
-                comparisonResult = "New rating is equal to the average of selected cards.";
+                scoreLosses++;
             }
 
-            // Display the comparison result and score
-            Toast.makeText(this, comparisonResult, Toast.LENGTH_LONG).show();
-            
+            // Update the text view only after 11 cards to avoid premature display
+            if (cardsSelected == 11) {
+                scoreTextView.setText(scoreWins + " - " + scoreLosses);
+                showResultButton();
+            }
+        } catch (NumberFormatException e) {
+            Toast.makeText(this, "Invalid rating format", Toast.LENGTH_SHORT).show();
         }
     }
+
+
+    private void showResultButton() {
+        Button resultButton = findViewById(R.id.resultButton);
+        if (scoreWins > scoreLosses) {
+            resultButton.setText("Win");
+        } else {
+            resultButton.setText("Lost");
+        }
+        resultButton.setVisibility(View.VISIBLE);
+    }
+
 
 
 
