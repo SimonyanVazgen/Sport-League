@@ -19,7 +19,7 @@
         android:alpha="0.9"
         android:background="@drawable/bac_button4"
         android:text="FOOTBALL"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -33,7 +33,7 @@
         android:alpha="0.9"
         android:background="@drawable/bac_button4"
         android:text="BASKETBALL"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -47,7 +47,7 @@
         android:alpha="0.9"
         android:background="@drawable/bac_button4"
         android:text="BOXING"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -60,7 +60,6 @@
         android:layout_marginEnd="100dp"
         android:alpha="0.9"
         android:background="@drawable/bac_button4"
-        android:text=""
 
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

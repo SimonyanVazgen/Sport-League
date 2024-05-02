@@ -59,4 +59,6 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
     implementation("androidx.fragment:fragment:$fragment_version")
 
+    implementation ("com.airbnb.android:lottie:+")
+
 }

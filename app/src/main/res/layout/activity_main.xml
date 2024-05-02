@@ -43,7 +43,7 @@
         android:alpha="0.9"
         android:background="@drawable/bac_button4"
         android:text="MY CARDS basketball"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="40dp" />
 
     <Button
@@ -61,7 +61,7 @@
         android:alpha="0.9"
         android:background="@drawable/bac_button4"
         android:text="MY CARDS football "
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="40dp" />
 
     <Button
@@ -75,7 +75,7 @@
         android:alpha="0.9"
         android:background="@drawable/bac_button4"
         android:text="MARKET"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="24dp"
         android:textStyle="bold" />
 
@@ -94,7 +94,7 @@
         android:background="@drawable/bac_button4"
         android:gravity="center"
         android:text="PACKS"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="45dp" />
 
     <ImageView
@@ -145,7 +145,7 @@
         android:alpha="0.9"
         android:background="@drawable/bac_button4"
         android:text="TRADING"
-        android:textColor="@color/black"
+        android:textColor="@color/white"
         android:textSize="24dp"
         android:textStyle="bold" />
 
@@ -181,11 +181,12 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="732dp"
+        android:layout_marginTop="730dp"
         android:layout_marginEnd="156dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginBottom="6dp"
         android:background="@drawable/bac_button4"
         android:text="@string/logout"
+        android:textColor="@color/white"
         android:textStyle="bold" />
 
     <TextView

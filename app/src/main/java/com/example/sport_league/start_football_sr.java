@@ -26,26 +26,26 @@ public class start_football_sr extends TeamDisplayActivity {
 
     private Button[] buttons = new Button[11];
     private Button lastClickedButton = null;
-    private TextView ratingTextView,ratingTextView2, scoreTextView, scoreTextView2;
+    private TextView ratingTextView, ratingTextView2, scoreTextView, scoreTextView2;
     private HashMap<Integer, String> cardRatingsMap = new HashMap<>();
     private int cardsSelected = 0;
     private int selectedButtonId;
     private Button button1;
-    private static final int TEAM_DISPLAY_REQUEST_CODE = 1;
     private int scoreWins = 0;
     private int scoreLosses = 0;
-    private static final int MY_CARDS_REQUEST_CODE = 1;
+    private static final int TEAM_DISPLAY_REQUEST_CODE = 1;
+    private static final int MY_CARDS_REQUEST_CODE = 2;
 
 
 
 
+    @SuppressLint({"MissingInflatedId",  "SetTextI18n"})
 
-    @SuppressLint("MissingInflatedId")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_football_sr);
-        button1  = findViewById(R.id.viewTeamButton);
+        button1 = findViewById(R.id.viewTeamButton);
 
         scoreTextView = findViewById(R.id.scoreTextView);
 
@@ -88,11 +88,10 @@ public class start_football_sr extends TeamDisplayActivity {
     }
 
     private void selectCard() {
-        if (this.cardsSelected <= 11) {
+        if (cardsSelected < 11) {
             Intent intent = new Intent(this, My_cards.class);
-            startActivityForResult(intent, 1);
+            startActivityForResult(intent, MY_CARDS_REQUEST_CODE);
         } else {
-            ratingTextView.setVisibility(View.INVISIBLE);
             Toast.makeText(this, "Maximum of 11 cards are already selected.", Toast.LENGTH_SHORT).show();
         }
     }
@@ -100,47 +99,52 @@ public class start_football_sr extends TeamDisplayActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        String cardRating = data.getStringExtra("cardRating");
-        if (requestCode == TEAM_DISPLAY_REQUEST_CODE) {
-            if (resultCode == RESULT_OK && data != null) {
+        if (resultCode == RESULT_OK && data != null) {
+            if (requestCode == TEAM_DISPLAY_REQUEST_CODE) {
+                // Handling the team display activity result
+                String cardRating = data.getStringExtra("cardRating");
                 if (cardRating != null) {
                     ratingTextView2.setText("Rating: " + cardRating);
-                    // Call compareRatings if 11 cards have been selected.
                     if (cardsSelected == 11) {
                         compareRatings(cardRating);
                     }
                 }
-            }
-
-            if (requestCode == 1 && resultCode == Activity.RESULT_OK && data != null) {
+            } else if (requestCode == MY_CARDS_REQUEST_CODE) {
+                // Handling the My_cards activity result
                 String imageUri = data.getStringExtra("imageUri");
-                Button buttonToUpdate = findViewById(this.selectedButtonId);
-                this.cardRatingsMap.put(this.selectedButtonId, cardRating);
-                this.cardsSelected++;
-                Glide.with(this).load(imageUri).into(new CustomTarget<Drawable>() {
-                    @Override
-                    public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
-                        buttonToUpdate.setBackground(resource);
-                    }
-
-                    @Override
-                    public void onLoadCleared(@Nullable Drawable placeholder) {
-                    }
-                });
-            }
-
-            if (scoreTextView != null) {
-                // Update the scoreTextView when a new card is added, but only if we have 11 cards.
-                if (cardsSelected == 11) {
-                    compareRatings(cardRating);
+                String cardRating = data.getStringExtra("cardRating");
+                if (imageUri != null && cardRating != null) {
+                    updateButtonWithImage(imageUri, cardRating);
                 }
             }
-        } else {
-            Toast.makeText(this, "Maximum of 11 cards are already selected.", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void updateButtonWithImage(String imageUri, String cardRating) {
+        Button buttonToUpdate = findViewById(selectedButtonId);
+        if (buttonToUpdate != null) {
+            this.cardRatingsMap.put(selectedButtonId, cardRating);
+            this.cardsSelected++;
+            Glide.with(this).load(imageUri).into(new CustomTarget<Drawable>() {
+                @Override
+                public void onResourceReady(@NonNull Drawable resource, @Nullable Transition<? super Drawable> transition) {
+                    buttonToUpdate.setBackground(resource);
+                }
+
+                @Override
+                public void onLoadCleared(@Nullable Drawable placeholder) {
+                }
+            });
+            if (cardsSelected == 11) {
+                compareRatings(cardRating);
+            }
         }
 
 
-        Button button = findViewById(R.id.resultButton);
+
+
+
+    Button button = findViewById(R.id.resultButton);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -154,7 +158,7 @@ public class start_football_sr extends TeamDisplayActivity {
 
         }
 
-    @SuppressLint("SetTextI18n")
+
     private void showRatingAndAnimate(View view) {
         // Animate and show rating
         if (this.cardRatingsMap.containsKey(view.getId())) {
@@ -218,7 +222,6 @@ public class start_football_sr extends TeamDisplayActivity {
         startActivity(intent);
     }
 
-
     private void compareRatings(String newRating) {
         try {
             int newRatingValue = Integer.parseInt(newRating);
@@ -234,25 +237,41 @@ public class start_football_sr extends TeamDisplayActivity {
                 scoreLosses++;
             }
 
-            // Update the text view only after 11 cards to avoid premature display
-            if (cardsSelected == 11) {
-                scoreTextView.setText(scoreWins + " - " + scoreLosses);
-                showResultButton();
-            }
+            scoreTextView.setText(scoreWins + " - " + scoreLosses);
+
+            // Check if score threshold reached
+            checkForEndGame();
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Invalid rating format", Toast.LENGTH_SHORT).show();
         }
     }
 
-
-    private void showResultButton() {
-        Button resultButton = findViewById(R.id.resultButton);
-        if (scoreWins > scoreLosses) {
-            resultButton.setText("Win");
-        } else {
-            resultButton.setText("Lost");
+    private void checkForEndGame() {
+        if (scoreWins == 5 || scoreLosses == 5) {
+            displayResultButton();
         }
+    }
+
+
+
+    private void displayResultButton() {
+        Button resultButton = findViewById(R.id.resultButton);
         resultButton.setVisibility(View.VISIBLE);
+
+        Intent resultIntent = new Intent();
+        if (scoreWins >= 5) {
+            resultButton.setText("You won! +500 coins +5 sport cup");
+            resultIntent.putExtra("gameResult", "win");
+
+        } else if (scoreLosses >= 3) {
+            resultButton.setText("You lost! -300 coins -3 sport cup");
+            resultIntent.putExtra("gameResult", "loss");
+        }
+
+        resultButton.setOnClickListener(v -> {
+            setResult(Activity.RESULT_OK, resultIntent);
+            finish();
+        });
     }
 
 
@@ -260,3 +279,4 @@ public class start_football_sr extends TeamDisplayActivity {
 
 
 }
+

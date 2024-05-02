@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+
 import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import java.util.HashSet;
@@ -31,6 +33,7 @@ public class My_cards extends AppCompatActivity {
     private String img17;
     private String img18;
     private String img19;
+
 
 
     public static HashSet<String> selectedImageUris = new HashSet<>();
@@ -262,9 +265,6 @@ public class My_cards extends AppCompatActivity {
         if (selectedImageUris.contains(img19)) {
             imageView19.setVisibility(View.GONE);
         }
-
-
-
     }
 
 
@@ -278,7 +278,5 @@ public class My_cards extends AppCompatActivity {
         imageView.setVisibility(View.GONE);
         finish();
     }
-
-
 
 }
