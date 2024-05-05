@@ -1,17 +1,22 @@
 package com.example.sport_league;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import com.bumptech.glide.Glide;
 import java.util.HashSet;
 
+/**
+ *
+ */
 public class My_cards extends AppCompatActivity {
 
     private String img2;
@@ -35,7 +40,9 @@ public class My_cards extends AppCompatActivity {
     private String img19;
 
 
-
+    /**
+     *
+     */
     public static HashSet<String> selectedImageUris = new HashSet<>();
 
 
@@ -46,11 +53,25 @@ public class My_cards extends AppCompatActivity {
         setContentView(R.layout.activity_my_cards);
 
 
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("newCardUri") && intent.hasExtra("newCardRating")) {
+            String newCardUri = intent.getStringExtra("newCardUri");
+            String newCardRating = intent.getStringExtra("newCardRating");  // Use this rating as needed
+
+            ImageView newCardImageView = findViewById(R.id.imageView20);  // Make sure this ID exists
+            Glide.with(this).load(newCardUri).into(newCardImageView);
+
+            setResult(Activity.RESULT_OK);  // Signal success
+        } else {
+            Toast.makeText(this, "No new card data received.", Toast.LENGTH_LONG).show();
+            setResult(Activity.RESULT_CANCELED);
+        }
+
 
 
         ImageView imageView1 = findViewById(R.id.imageView);
         img1 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/apedipele.png?alt=media&token=cba783b8-24bb-4aed-9023-d77e0cae0a00";
-        Glide.with(this).load(img1).into(imageView1);
+        Glide.with(this).load(this.img1).into(imageView1);
 
         ImageView imageView2 = findViewById(R.id.imageView2);
         img2 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/haland.png?alt=media&token=db841016-0a48-4856-a753-f69b87b22ead";

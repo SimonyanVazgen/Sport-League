@@ -11,6 +11,7 @@
         >
 
         <LinearLayout
+            android:id="@+id/your_layout_id"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
@@ -64,48 +65,33 @@
                 android:layout_height="206dp"
                 android:layout_marginTop="8dp" />
 
+            <ImageView
+                android:id="@+id/imageView9"
+                android:layout_width="167dp"
+                android:layout_height="206dp"
+                android:layout_marginTop="8dp" />
+
+            <ImageView
+                android:id="@+id/imageView10"
+                android:layout_width="167dp"
+                android:layout_height="206dp"
+                android:layout_marginTop="8dp" />
+
+            <ImageView
+                android:id="@+id/imageView11"
+                android:layout_width="167dp"
+                android:layout_height="206dp"
+                android:layout_marginTop="8dp" />
+
+
+
+
         </LinearLayout>
     </ScrollView>
 
-    <Button
-        android:id="@+id/gndak"
-        android:layout_width="50dp"
-        android:layout_height="54dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="414dp"
-        android:layout_marginEnd="83dp"
-        android:background="@drawable/gnak" />
 
-    <Button
-        android:id="@+id/basketballgndak"
-        android:layout_width="50dp"
-        android:layout_height="54dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="305dp"
-        android:layout_marginEnd="81dp"
 
-        android:background="@drawable/baskgndak" />
 
-    <Button
-        android:id="@+id/dernoc"
-        android:layout_width="50dp"
-        android:layout_height="54dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="229dp"
-        android:layout_marginEnd="84dp"
 
-        android:background="@drawable/boxdernoc" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="100dp"
-        android:layout_height="334dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginTop="189dp"
-        android:layout_marginEnd="58dp"
-        android:background="@drawable/bac_button4" />
 </RelativeLayout>

@@ -7,30 +7,67 @@
     android:background="@drawable/basck"
     tools:context=".start_bascketball">
 
-    <Button
-        android:id="@+id/randombutton1"
-        android:layout_width="200dp"
-        android:layout_height="102dp"
-     android:background="@drawable/bec_button2"
-        android:onClick="onRandomButtonClick"
-        android:text="Нажмите здесь, чтобы выбрать баскетбольные схемы"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.45"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.166" />
-
     <ImageButton
         android:id="@+id/ImageView"
-        android:layout_width="247dp"
-        android:layout_height="247dp"
+        android:layout_width="277dp"
+        android:layout_height="208dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.896"
-        app:srcCompat="@drawable/bsr1"
-        android:background="@drawable/bec"
         tools:ignore="MissingConstraints" />
+
+
+    <Button
+        android:id="@+id/leftButton"
+        android:layout_width="79dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="324dp"
+        android:background="@drawable/baseline_chevron_left_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/rightButton"
+        android:layout_width="79dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="324dp"
+        android:background="@drawable/baseline_chevron_right_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+    <ImageView
+        android:id="@+id/imageView20"
+        android:layout_width="87dp"
+        android:layout_height="86dp"
+        app:layout_constraintBottom_toTopOf="@+id/ImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.349"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.137" />
+
+
+    <TextView
+        android:id="@+id/SportCup"
+        android:layout_width="91dp"
+        android:layout_height="56dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        android:text="0"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="50dp"
+        app:layout_constraintStart_toEndOf="@+id/imageView20"
+        app:layout_constraintTop_toTopOf="@+id/imageView20"
+        app:layout_constraintVertical_bias="0.533" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

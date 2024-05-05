@@ -9,6 +9,8 @@ import android.view.View;
 import android.view.animation.ScaleAnimation;
 import android.view.animation.Animation;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -84,6 +86,14 @@ public class start_football_sr extends TeamDisplayActivity {
                     }
                 }
             });
+        }
+
+        Intent intent = getIntent();
+        if (intent.hasExtra("newCardUri") && intent.hasExtra("newCardRating")) {
+            String newCardUri = intent.getStringExtra("newCardUri");
+            String newCardRating = intent.getStringExtra("newCardRating");
+            // Assuming you have a method to add cards dynamically
+            addNewCard(newCardUri, newCardRating);
         }
     }
 
@@ -258,23 +268,33 @@ public class start_football_sr extends TeamDisplayActivity {
         Button resultButton = findViewById(R.id.resultButton);
         resultButton.setVisibility(View.VISIBLE);
 
-        Intent resultIntent = new Intent();
+        Intent resultIntent = new Intent(this, market.class);
         if (scoreWins >= 5) {
             resultButton.setText("You won! +500 coins +5 sport cup");
             resultIntent.putExtra("gameResult", "win");
-
+            resultIntent.putExtra("coinChange", 500);  // Pass coin change
         } else if (scoreLosses >= 3) {
             resultButton.setText("You lost! -300 coins -3 sport cup");
             resultIntent.putExtra("gameResult", "loss");
+            resultIntent.putExtra("coinChange", 0);  // Pass coin change (no coins deducted on loss for this scenario)
         }
 
         resultButton.setOnClickListener(v -> {
-            setResult(Activity.RESULT_OK, resultIntent);
+            startActivity(resultIntent);  // Start market activity with resultIntent
             finish();
         });
     }
 
 
+    private void addNewCard(String uri, String rating) {
+        // You should have a layout or method to dynamically add new card views
+        // This is a simplified example
+        ImageView newCardImageView = new ImageView(this);
+        Glide.with(this).load(uri).into(newCardImageView);
+        LinearLayout layout = findViewById(R.id.your_layout_id); // Make sure you have this layout in your XML
+        layout.addView(newCardImageView);
+        // Optionally add other views or listeners for the rating
+    }
 
 
 
