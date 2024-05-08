@@ -35,7 +35,7 @@ public class start_football_sr extends TeamDisplayActivity {
     private Button button1;
     private int scoreWins = 0;
     private int scoreLosses = 0;
-    private static final int TEAM_DISPLAY_REQUEST_CODE = 1;
+    static final int TEAM_DISPLAY_REQUEST_CODE = 1;
     private static final int MY_CARDS_REQUEST_CODE = 2;
 
 

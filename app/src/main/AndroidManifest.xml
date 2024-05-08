@@ -22,13 +22,19 @@
         android:theme="@style/Theme.Sport_league"
         tools:targetApi="31">
         <activity
+            android:name=".call"
+            android:exported="false" />
+        <activity
+            android:name=".RandomTradingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SplashScreenActivity"
+            android:exported="false" />
+        <activity
             android:name=".TeamDisplayActivity1"
             android:exported="false" />
         <activity
             android:name=".ForFragmentfootball"
-            android:exported="false" />
-        <activity
-            android:name=".SummaryActivity"
             android:exported="false" />
         <activity
             android:name=".TeamDisplayActivity"

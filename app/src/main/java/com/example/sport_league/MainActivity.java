@@ -2,9 +2,11 @@ package com.example.sport_league;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
     Button button;
     TextView textView;
     FirebaseUser user;
+    private ImageButton callButton;
 
     @SuppressLint({"MissingInflatedId", "WrongViewCast"})
     @Override
@@ -24,6 +27,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+
+
+
+        callButton = findViewById(R.id.call);
+        callButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, call.class); // Change to the appropriate Activity
+
+                startActivity(intent);
+            }
+        });
 
         Button button = findViewById(R.id.Start);
         button.setOnClickListener(new View.OnClickListener() {
@@ -100,5 +115,19 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
+
+
+        Button button6 = findViewById(R.id.trading);
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent6 = new Intent(MainActivity.this, treading.class);
+                startActivity(intent6);
+            }
+
+        });
+
+
+
     }
 }

@@ -214,6 +214,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
+        android:id="@+id/button15"
         android:layout_width="123dp"
         android:layout_height="65dp"
         android:layout_alignParentStart="true"
@@ -254,6 +255,15 @@
         app:layout_constraintVertical_bias="0.023"
         app:srcCompat="@drawable/baseline_currency_bitcoin_24" />
 
+    <ImageButton
+        android:id="@+id/call"
+        android:layout_width="58dp"
+        android:layout_height="53dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
 
+        android:layout_marginTop="-4dp"
+        android:layout_marginEnd="5dp"
+        android:background="@drawable/baseline_circle_notifications_24" />
 
 </RelativeLayout>

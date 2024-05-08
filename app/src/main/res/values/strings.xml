@@ -53,4 +53,5 @@
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
     <string name="confirm_password">confirm password</string>
+    <string name="username">username</string>
 </resources>
