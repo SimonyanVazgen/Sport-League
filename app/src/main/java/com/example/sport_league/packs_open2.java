@@ -2,34 +2,25 @@ package com.example.sport_league;
 
 import android.os.Bundle;
 import android.widget.ImageView;
-
 import androidx.appcompat.app.AppCompatActivity;
+import com.bumptech.glide.Glide;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 
-import java.util.HashSet;
-import java.util.Random;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 
 public class packs_open2 extends AppCompatActivity {
-    private int[] imageResources = {
-            R.drawable.mkitaryan,
-            R.drawable.mudryk,
-            R.drawable.muriel,
-            R.drawable.sancho,
-            R.drawable.smolarek,
-
-            R.drawable.karvajal,
-            R.drawable.smolarek,
-            R.drawable.mudryk,
-            R.drawable.rubenneves
-    };
-
-    // Use a set to keep track of displayed image indices
-    private Set<Integer> displayedImageIndices = new HashSet<>();
+    private List<String> imageUrls = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_packs_open2);
+
+        // Initialize Firestore
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
 
         // Get ImageViews
         ImageView imageView1 = findViewById(R.id.randomImageView5);
@@ -37,25 +28,32 @@ public class packs_open2 extends AppCompatActivity {
         ImageView imageView3 = findViewById(R.id.randomImageView7);
         ImageView imageView4 = findViewById(R.id.randomImageView8);
 
-        // Display random images without repetition
-        displayRandomImage(imageView1);
-        displayRandomImage(imageView2);
-        displayRandomImage(imageView3);
-        displayRandomImage(imageView4);
-        // Call displayRandomImage for the other ImageViews as needed
+        // Fetch image URLs from Firestore
+        db.collection("images").get().addOnCompleteListener(task -> {
+            if (task.isSuccessful()) {
+                for (QueryDocumentSnapshot document : task.getResult()) {
+                    imageUrls.add(document.getString("imageUrl"));  // assuming the field containing the URL is named "imageUrl"
+                }
+
+                // Display four random images each time the activity is created
+                displayRandomImages(new ImageView[]{imageView1, imageView2, imageView3, imageView4});
+            } else {
+                System.out.println("Error getting documents: " + task.getException());
+            }
+        });
     }
 
-    private void displayRandomImage(ImageView imageView) {
-        // Get a random index that has not been displayed yet
-        int randomIndex;
-        do {
-            randomIndex = new Random().nextInt(imageResources.length);
-        } while (displayedImageIndices.contains(randomIndex));
+    private void displayRandomImages(ImageView[] imageViews) {
+        if (imageUrls.size() < 4) {
+            System.out.println("Not enough images available");
+            return;
+        }
 
-        // Add the index to the set of displayed indices
-        displayedImageIndices.add(randomIndex);
-
-        // Set the randomly chosen image to the ImageView
-        imageView.setImageResource(imageResources[randomIndex]);
+        Collections.shuffle(imageUrls);  // Shuffle the list of image URLs
+        for (int i = 0; i < 4; i++) {
+            Glide.with(this)
+                    .load(imageUrls.get(i))
+                    .into(imageViews[i]);
+        }
     }
 }

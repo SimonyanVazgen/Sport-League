@@ -4,9 +4,9 @@
         <shape android:shape="rectangle">
             <corners android:radius="20dp" />
             <gradient
-                android:startColor="@color/blue"
-            android:endColor="@color/black"
-            android:angle="135"/>
+                android:startColor="@color/red"
+                android:endColor="@color/black"
+                android:angle="135"/>
 
             <padding
                 android:left="12dp"
@@ -21,11 +21,11 @@
             android:propertyName="backgroundColor"
             android:duration="300"
             android:valueFrom="#3C000000"
-        android:valueTo="#FFFFFF"
-        android:valueType="intType"
-        android:repeatCount="1"
-        android:repeatMode="reverse"
-        android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
+            android:valueTo="#FFFFFF"
+            android:valueType="intType"
+            android:repeatCount="1"
+            android:repeatMode="reverse"
+            android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
     </set>
 
 </selector>

@@ -1,170 +1,141 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     android:background="@drawable/dasht"
-    tools:context=".TeamDisplayActivity">
+    android:gravity="center">
+
+    <Button
+        android:id="@+id/revealButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Reveal Card"
+        android:onClick="revealRandomCard"
+    android:layout_centerInParent="true" />
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:columnCount="3"
+        android:rowCount="6"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false">
+
+        <!-- Goalkeeper -->
+        <ImageView
+            android:id="@+id/imageViewGoalkeeper"
+            android:layout_width="91dp"
+            android:layout_height="87dp"
+            android:layout_margin="8dp"
+            android:layout_row="5"
+            android:layout_column="1"
+            android:background="@drawable/card_back"
+            android:scaleType="fitCenter" />
+
+        <!-- Defenders -->
+        <ImageView
+            android:id="@+id/imageViewDefender1"
+            android:layout_width="91dp"
+            android:layout_height="87dp"
+            android:layout_margin="8dp"
+            android:layout_row="4"
+            android:layout_column="0"
+            android:background="@drawable/card_back"
+            android:scaleType="fitCenter" />
+
+        <ImageView
+            android:id="@+id/imageViewDefender2"
+            android:layout_width="91dp"
+            android:layout_height="87dp"
+            android:layout_margin="8dp"
+            android:layout_row="4"
+            android:layout_column="1"
+            android:background="@drawable/card_back"
+            android:scaleType="fitCenter" />
 
 
-    <ImageView
-        android:id="@+id/imageViewTeam1"
-        android:layout_width="82dp"
-        android:layout_height="91dp"
-        android:layout_marginBottom="16dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/imageViewDefender3"
+            android:layout_width="91dp"
+            android:layout_height="87dp"
+            android:layout_margin="8dp"
+            android:layout_row="4"
+            android:layout_column="2"
+            android:background="@drawable/card_back"
+            android:scaleType="fitCenter" />
 
-    <ImageView
-        android:id="@+id/imageViewTeam2"
-        android:layout_width="82dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="368dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/imageViewDefender4"
+            android:layout_width="91dp"
+            android:layout_height="87dp"
+            android:layout_margin="8dp"
+            android:layout_row="3"
+            android:layout_column="1"
+            android:background="@drawable/card_back"
+            android:scaleType="fitCenter" />
 
-    <ImageView
-        android:id="@+id/imageViewTeam3"
-        android:layout_width="82dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="572dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.311"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <!-- Midfielders -->
+        <ImageView
+            android:id="@+id/imageViewMidfielder1"
+            android:layout_width="91dp"
+            android:layout_height="87dp"
+            android:layout_margin="8dp"
+            android:layout_row="2"
+            android:layout_column="0"
+            android:background="@drawable/card_back"
+            android:scaleType="fitCenter" />
 
-    <ImageView
-        android:id="@+id/imageViewTeam4"
-        android:layout_width="82dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="436dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.057"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/imageViewMidfielder2"
+            android:layout_width="91dp"
+            android:layout_height="87dp"
+            android:layout_margin="8dp"
+            android:layout_row="2"
+            android:layout_column="1"
+            android:background="@drawable/card_back"
+            android:scaleType="fitCenter" />
 
-    <ImageView
-        android:id="@+id/imageViewTeam5"
-        android:layout_width="82dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="572dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.688"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/imageViewMidfielder3"
+            android:layout_width="91dp"
+            android:layout_height="87dp"
+            android:layout_margin="8dp"
+            android:layout_row="2"
+            android:layout_column="2"
+            android:background="@drawable/card_back"
+            android:scaleType="fitCenter" />
 
-    <ImageView
-        android:id="@+id/imageViewTeam6"
-        android:layout_width="82dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="436dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <!-- Forwards -->
+        <ImageView
+            android:id="@+id/imageViewForward1"
+            android:layout_width="91dp"
+            android:layout_height="87dp"
+            android:layout_row="1"
+            android:layout_column="0"
+            android:layout_margin="8dp"
+            android:background="@drawable/card_back"
+            android:scaleType="fitCenter" />
 
-    <ImageView
-        android:id="@+id/imageViewTeam7"
-        android:layout_width="82dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="276dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.112"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/imageViewForward2"
+            android:layout_width="91dp"
+            android:layout_height="87dp"
+            android:layout_row="1"
+            android:layout_column="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/card_back"
+            android:scaleType="fitCenter" />
 
-    <ImageView
-        android:id="@+id/imageViewTeam8"
-        android:layout_width="82dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="276dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.884"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        <ImageView
+            android:id="@+id/imageViewForward3"
+            android:layout_width="91dp"
+            android:layout_height="87dp"
+            android:layout_margin="8dp"
+            android:layout_row="1"
+            android:layout_column="2"
+            android:background="@drawable/card_back"
+            android:scaleType="fitCenter" />
 
 
-    <ImageView
-        android:id="@+id/imageViewTeam9"
-        android:layout_width="82dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="140dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.144"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageViewTeam10"
-        android:layout_width="82dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="232dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/imageViewTeam11"
-        android:layout_width="82dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="140dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.842"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/ratingTextView"
-        android:layout_width="151dp"
-        android:layout_height="87dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="16dp"
-        android:gravity="top"
-        android:text="Rating"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038"
-        tools:ignore="MissingConstraints" />
-
-    <TextView
-        android:id="@+id/ratingTextView1"
-        android:layout_width="151dp"
-        android:layout_height="87dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="224dp"
-        android:gravity="top"
-        android:text="Rating"
-        android:textSize="30dp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.038"
-        tools:ignore="MissingConstraints" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </GridLayout>
+</LinearLayout>

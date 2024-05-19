@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bacr"
+    android:background="@drawable/kadr"
     tools:context=".startic_heto">
 
     <!-- Your existing XML layout with minor changes -->
@@ -14,8 +14,8 @@
         android:id="@+id/football"
         android:layout_width="282dp"
         android:layout_height="109dp"
-        android:layout_marginTop="68dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginTop="216dp"
+        android:layout_marginEnd="64dp"
         android:alpha="0.9"
         android:background="@drawable/bac_button4"
         android:text="FOOTBALL"
@@ -28,8 +28,8 @@
         android:id="@+id/BASKETBALL"
         android:layout_width="278dp"
         android:layout_height="110dp"
-        android:layout_marginTop="204dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginTop="360dp"
+        android:layout_marginEnd="68dp"
         android:alpha="0.9"
         android:background="@drawable/bac_button4"
         android:text="BASKETBALL"
@@ -42,8 +42,8 @@
         android:id="@+id/BOXING"
         android:layout_width="274dp"
         android:layout_height="118dp"
-        android:layout_marginTop="356dp"
-        android:layout_marginEnd="100dp"
+        android:layout_marginTop="508dp"
+        android:layout_marginEnd="68dp"
         android:alpha="0.9"
         android:background="@drawable/bac_button4"
         android:text="BOXING"
@@ -52,61 +52,4 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/v2button"
-        android:layout_width="230dp"
-        android:layout_height="107dp"
-        android:layout_marginTop="532dp"
-        android:layout_marginEnd="100dp"
-        android:alpha="0.9"
-        android:background="@drawable/bac_button4"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/futcr7"
-        android:layout_width="78dp"
-        android:layout_height="87dp"
-        android:layout_marginStart="316dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.124"
-        app:srcCompat="@drawable/ronaldo" />
-
-    <ImageView
-        android:id="@+id/boxmike"
-        android:layout_width="82dp"
-        android:layout_height="96dp"
-        android:layout_marginStart="316dp"
-
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.573"
-        app:srcCompat="@drawable/mike" />
-
-    <ImageView
-        android:id="@+id/baskjordan"
-        android:layout_width="70dp"
-        android:layout_height="89dp"
-        android:layout_marginTop="220dp"
-        android:layout_marginEnd="24dp"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/jordan" />
-
-    <ImageView
-        android:id="@+id/vsimage"
-        android:layout_width="111dp"
-        android:layout_height="99dp"
-        android:layout_marginTop="532dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.46"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/vs2" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bacr"
+    android:background="@drawable/kadr"
     tools:context=".market">
 
 
@@ -77,7 +77,6 @@
         android:id="@+id/button13"
         android:layout_width="116dp"
         android:layout_height="60dp"
-
         android:background="@drawable/bec"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -104,11 +103,10 @@
         android:id="@+id/imageView7"
         android:layout_width="153dp"
         android:layout_height="170dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginBottom="480dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="500dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-         />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
         android:id="@+id/imageView11"
@@ -160,4 +158,14 @@
         app:layout_constraintVertical_bias="0.486"
         app:srcCompat="@drawable/pac1"
         tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/timeTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coinsTextView" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

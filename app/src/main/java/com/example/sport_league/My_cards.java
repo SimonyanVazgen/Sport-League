@@ -63,7 +63,7 @@ public class My_cards extends AppCompatActivity {
 
             setResult(Activity.RESULT_OK);  // Signal success
         } else {
-            Toast.makeText(this, "No new card data received.", Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "No new card data received.", Toast.LENGTH_LONG).show();
             setResult(Activity.RESULT_CANCELED);
         }
 

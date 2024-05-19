@@ -7,7 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="15dp"
-    android:background="@drawable/bacr"
+    android:background="@drawable/kadr"
     tools:context=".Login">
 
 
@@ -23,6 +23,7 @@
         />
    <com.google.android.material.textfield.TextInputLayout
        android:layout_width="match_parent"
+       android:textColorHint="@color/white"
        android:layout_height="wrap_content">
        <com.google.android.material.textfield.TextInputEditText
            android:id="@+id/email"
@@ -38,20 +39,21 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
+        android:textColorHint="@color/white"
         android:layout_height="wrap_content">
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/password"
             android:hint="@string/password"
-            android:textColor="@color/white"
-            android:textStyle="bold"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:inputType="textPassword"/>
 
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <ProgressBar
-        android:id="@+id/prgressBar"
+        android:id="@+id/progressBar"
         android:visibility="gone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>

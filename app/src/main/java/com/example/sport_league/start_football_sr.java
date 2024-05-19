@@ -6,11 +6,10 @@ import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.ScaleAnimation;
 import android.view.animation.Animation;
+import android.view.animation.ScaleAnimation;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -23,46 +22,38 @@ import com.bumptech.glide.request.target.CustomTarget;
 import com.bumptech.glide.request.transition.Transition;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
-public class start_football_sr extends TeamDisplayActivity {
+public class start_football_sr extends AppCompatActivity {
 
     private Button[] buttons = new Button[11];
     private Button lastClickedButton = null;
-    private TextView ratingTextView, ratingTextView2, scoreTextView, scoreTextView2;
+    private TextView ratingTextView, ratingTextView2, scoreTextView;
     private HashMap<Integer, String> cardRatingsMap = new HashMap<>();
     private int cardsSelected = 0;
     private int selectedButtonId;
-    private Button button1;
     private int scoreWins = 0;
     private int scoreLosses = 0;
     static final int TEAM_DISPLAY_REQUEST_CODE = 1;
     private static final int MY_CARDS_REQUEST_CODE = 2;
+    private Button viewTeamButton;
+    public static HashSet<String> selectedImageUris = new HashSet<>();
 
-
-
-
-    @SuppressLint({"MissingInflatedId",  "SetTextI18n"})
-
+    @SuppressLint({"MissingInflatedId", "SetTextI18n"})
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.start_football_sr);
-        button1 = findViewById(R.id.viewTeamButton);
 
+        viewTeamButton = findViewById(R.id.viewTeamButton);
         scoreTextView = findViewById(R.id.scoreTextView);
-
-
-        button1.setOnClickListener(v -> {
-            Intent intent = new Intent(start_football_sr.this, TeamDisplayActivity.class);
-            startActivityForResult(intent, TEAM_DISPLAY_REQUEST_CODE);
-        });
-
-
-        displayTeamMemberRating("95");
-
         ratingTextView = findViewById(R.id.ratingTextView);
         ratingTextView2 = findViewById(R.id.ratingTextView2);
 
+        viewTeamButton.setOnClickListener(v -> {
+            Intent intent = new Intent(start_football_sr.this, TeamDisplayActivity.class);
+            startActivityForResult(intent, TEAM_DISPLAY_REQUEST_CODE);
+        });
 
         int[] buttonIds = {
                 R.id.button, R.id.button2, R.id.button123, R.id.button4, R.id.button5,
@@ -71,29 +62,18 @@ public class start_football_sr extends TeamDisplayActivity {
 
         for (int i = 0; i < buttonIds.length; i++) {
             buttons[i] = findViewById(buttonIds[i]);
-            buttons[i].setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    if (lastClickedButton != null && lastClickedButton != v) {
-                        resetAnimation(lastClickedButton);
-                    }
-                    selectedButtonId = v.getId();
-                    if (cardsSelected < 11) {
-                        selectCard();
-                    } else {
-                        showRatingAndAnimate(v);
-                        lastClickedButton = (Button) v;
-                    }
+            buttons[i].setOnClickListener(v -> {
+                if (lastClickedButton != null && lastClickedButton != v) {
+                    resetAnimation(lastClickedButton);
+                }
+                selectedButtonId = v.getId();
+                if (cardsSelected < 11) {
+                    selectCard();
+                } else {
+                    showRatingAndAnimate(v);
+                    lastClickedButton = (Button) v;
                 }
             });
-        }
-
-        Intent intent = getIntent();
-        if (intent.hasExtra("newCardUri") && intent.hasExtra("newCardRating")) {
-            String newCardUri = intent.getStringExtra("newCardUri");
-            String newCardRating = intent.getStringExtra("newCardRating");
-            // Assuming you have a method to add cards dynamically
-            addNewCard(newCardUri, newCardRating);
         }
     }
 
@@ -111,7 +91,6 @@ public class start_football_sr extends TeamDisplayActivity {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == RESULT_OK && data != null) {
             if (requestCode == TEAM_DISPLAY_REQUEST_CODE) {
-                // Handling the team display activity result
                 String cardRating = data.getStringExtra("cardRating");
                 if (cardRating != null) {
                     ratingTextView2.setText("Rating: " + cardRating);
@@ -120,7 +99,6 @@ public class start_football_sr extends TeamDisplayActivity {
                     }
                 }
             } else if (requestCode == MY_CARDS_REQUEST_CODE) {
-                // Handling the My_cards activity result
                 String imageUri = data.getStringExtra("imageUri");
                 String cardRating = data.getStringExtra("cardRating");
                 if (imageUri != null && cardRating != null) {
@@ -149,28 +127,9 @@ public class start_football_sr extends TeamDisplayActivity {
                 compareRatings(cardRating);
             }
         }
-
-
-
-
-
-    Button button = findViewById(R.id.resultButton);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(start_football_sr.this, start_football.class);
-                startActivity(intent);
-            }
-
-        });
-
-
-
-        }
-
+    }
 
     private void showRatingAndAnimate(View view) {
-        // Animate and show rating
         if (this.cardRatingsMap.containsKey(view.getId())) {
             String rating = this.cardRatingsMap.get(view.getId());
             ScaleAnimation scaleAnimation = new ScaleAnimation(
@@ -184,22 +143,16 @@ public class start_football_sr extends TeamDisplayActivity {
             scaleAnimation.setAnimationListener(new Animation.AnimationListener() {
                 @Override
                 public void onAnimationStart(Animation animation) {
-
                 }
 
                 @Override
                 public void onAnimationEnd(Animation animation) {
-
                     ratingTextView.setText("Rating: " + rating);
                     ratingTextView.setVisibility(View.VISIBLE);
-
-
-
                 }
 
                 @Override
                 public void onAnimationRepeat(Animation animation) {
-
                 }
             });
 
@@ -222,14 +175,6 @@ public class start_football_sr extends TeamDisplayActivity {
         scaleAnimation.setFillAfter(true);
 
         view.startAnimation(scaleAnimation);
-
-    }
-
-
-    private void displayTeamMemberRating(String rating) {
-        Intent intent = new Intent(this, TeamDisplayActivity.class);
-        intent.putExtra("rating", rating);  // Pass the rating to TeamDisplayActivity
-        startActivity(intent);
     }
 
     private void compareRatings(String newRating) {
@@ -239,21 +184,28 @@ public class start_football_sr extends TeamDisplayActivity {
             for (String rating : cardRatingsMap.values()) {
                 sumOfRatings += Integer.parseInt(rating);
             }
-            int averageRating = sumOfRatings / cardRatingsMap.size();
+            int averageRating = sumOfRatings / Math.max(1, cardRatingsMap.size());
 
             if (newRatingValue > averageRating) {
                 scoreWins++;
-            } else if (newRatingValue < averageRating) {
+            } else if(newRatingValue == averageRating){
+                scoreWins++;
+                scoreLosses++;
+
+            } else {
                 scoreLosses++;
             }
+            cardRatingsMap.remove(selectedButtonId);
 
-            scoreTextView.setText(scoreWins + " - " + scoreLosses);
-
-            // Check if score threshold reached
+            updateScoreDisplay();
             checkForEndGame();
         } catch (NumberFormatException e) {
             Toast.makeText(this, "Invalid rating format", Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void updateScoreDisplay() {
+        scoreTextView.setText("Wins: " + scoreWins + " | Losses: " + scoreLosses);
     }
 
     private void checkForEndGame() {
@@ -261,8 +213,6 @@ public class start_football_sr extends TeamDisplayActivity {
             displayResultButton();
         }
     }
-
-
 
     private void displayResultButton() {
         Button resultButton = findViewById(R.id.resultButton);
@@ -272,31 +222,16 @@ public class start_football_sr extends TeamDisplayActivity {
         if (scoreWins >= 5) {
             resultButton.setText("You won! +500 coins +5 sport cup");
             resultIntent.putExtra("gameResult", "win");
-            resultIntent.putExtra("coinChange", 500);  // Pass coin change
-        } else if (scoreLosses >= 3) {
+            resultIntent.putExtra("coinChange", 500);
+        } else if (scoreLosses >= 5) {
             resultButton.setText("You lost! -300 coins -3 sport cup");
             resultIntent.putExtra("gameResult", "loss");
-            resultIntent.putExtra("coinChange", 0);  // Pass coin change (no coins deducted on loss for this scenario)
+            resultIntent.putExtra("coinChange", -300);
         }
 
         resultButton.setOnClickListener(v -> {
-            startActivity(resultIntent);  // Start market activity with resultIntent
+            startActivity(resultIntent);
             finish();
         });
     }
-
-
-    private void addNewCard(String uri, String rating) {
-        // You should have a layout or method to dynamically add new card views
-        // This is a simplified example
-        ImageView newCardImageView = new ImageView(this);
-        Glide.with(this).load(uri).into(newCardImageView);
-        LinearLayout layout = findViewById(R.id.your_layout_id); // Make sure you have this layout in your XML
-        layout.addView(newCardImageView);
-        // Optionally add other views or listeners for the rating
-    }
-
-
-
 }
-

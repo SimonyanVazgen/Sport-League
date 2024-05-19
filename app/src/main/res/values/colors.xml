@@ -10,7 +10,8 @@
     <color name="pink">#e45eb0</color>
     <color name="green1">#34e3c4</color>
     <color name="yellow">#D08E2E</color>
-    <color name="red">#BC124C</color>
-    <color name="bacbrown">#66453B</color>
+    <color name="red">#E50202</color>
+    <color name="bacbrown">#673AB7</color>
     <color name="man">#7A59B5</color>
+    <color name="ee">#FF2C07</color>
 </resources>

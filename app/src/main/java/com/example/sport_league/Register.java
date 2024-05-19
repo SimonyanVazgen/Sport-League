@@ -4,27 +4,27 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.firestore.auth.User;
 
 public class Register extends AppCompatActivity {
-    private TextInputEditText editTextEmail, editTextPassword, editTextPasswordConfirm, editTextUsername;
-    private TextView textView;
-    private FirebaseAuth mAuth;
-    private DatabaseReference databaseUsers, usernamesRef;
+    private EditText editTextEmail, editTextUsername, editTextPassword, editTextPasswordConfirm;
+    private Button buttonRegister;
+    private TextView textViewLogin;
     private ProgressBar progressBar;
+    private FirebaseAuth mAuth;
+    private DatabaseReference databaseUsers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,111 +33,111 @@ public class Register extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         databaseUsers = FirebaseDatabase.getInstance().getReference("users");
-        usernamesRef = FirebaseDatabase.getInstance().getReference("usernames"); // Reference to usernames node
 
-        editTextEmail = findViewById(R.id.email);
-        editTextPassword = findViewById(R.id.password);
-        editTextPasswordConfirm = findViewById(R.id.password_confirm);
-        editTextUsername = findViewById(R.id.username);
-        textView = findViewById(R.id.loginNow);
-        progressBar = findViewById(R.id.prgressBar);
+        editTextEmail = findViewById(R.id.editTextEmail);
+        editTextUsername = findViewById(R.id.editTextUsername);
+        editTextPassword = findViewById(R.id.editTextPassword);
+        editTextPasswordConfirm = findViewById(R.id.editTextPasswordConfirm);
+        buttonRegister = findViewById(R.id.buttonRegister);
+        textViewLogin = findViewById(R.id.textViewLogin);
+        progressBar = findViewById(R.id.progressBar);
 
-        textView.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), Login.class)));
+        textViewLogin.setOnClickListener(v -> {
+            startActivity(new Intent(Register.this, Login.class));
+        });
 
-        findViewById(R.id.btn_register).setOnClickListener(v -> {
-            if (validateForm()) {
-                String username = editTextUsername.getText().toString().trim();
-                checkUsernameAvailability(username);
+        buttonRegister.setOnClickListener(v -> {
+            String email = editTextEmail.getText().toString().trim();
+            String username = editTextUsername.getText().toString().trim();
+            String password = editTextPassword.getText().toString().trim();
+            String passwordConfirm = editTextPasswordConfirm.getText().toString().trim();
+
+            if (!validateForm(email, username, password, passwordConfirm)) {
+                return;
             }
+
+            registerUser(email, username, password);
         });
     }
 
-    private boolean validateForm() {
-        String password = editTextPassword.getText().toString().trim();
-        String confirmPassword = editTextPasswordConfirm.getText().toString().trim();
-        String username = editTextUsername.getText().toString().trim();
+    private boolean validateForm(String email, String username, String password, String passwordConfirm) {
+        boolean valid = true;
 
-        if (TextUtils.isEmpty(username) || TextUtils.isEmpty(password) || TextUtils.isEmpty(confirmPassword)) {
-            Toast.makeText(this, "Please enter all fields", Toast.LENGTH_SHORT).show();
-            return false;
+        if (TextUtils.isEmpty(email)) {
+            editTextEmail.setError("Required.");
+            valid = false;
+        } else {
+            editTextEmail.setError(null);
         }
 
-        if (!password.equals(confirmPassword)) {
-            Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show();
-            return false;
+        if (TextUtils.isEmpty(username)) {
+            editTextUsername.setError("Required.");
+            valid = false;
+        } else {
+            editTextUsername.setError(null);
         }
 
-        return true;
+        if (TextUtils.isEmpty(password) || password.length() < 6) {
+            editTextPassword.setError("Required and must be at least 6 characters.");
+            valid = false;
+        } else {
+            editTextPassword.setError(null);
+        }
+
+        if (TextUtils.isEmpty(passwordConfirm) || !passwordConfirm.equals(password)) {
+            editTextPasswordConfirm.setError("Confirm Password does not match.");
+            valid = false;
+        } else {
+            editTextPasswordConfirm.setError(null);
+        }
+
+        return valid;
     }
 
-    private void checkUsernameAvailability(String username) {
-        usernamesRef.child(username).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()) {
-                    Toast.makeText(Register.this, "Username already taken", Toast.LENGTH_SHORT).show();
-                } else {
-                    registerUser(username);
-                }
-            }
-
-            @Override
-            public void onCancelled(DatabaseError databaseError) {
-                Toast.makeText(Register.this, "Failed to check username availability: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-
-    private void registerUser(String username) {
+    private void registerUser(String email, String username, String password) {
         progressBar.setVisibility(View.VISIBLE);
-        String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
 
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(this, task -> {
+                    progressBar.setVisibility(View.GONE);
                     if (task.isSuccessful()) {
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        updateUserData(new User(username, email, false), user.getUid());
+                        // Register user in the database
+                        FirebaseUser firebaseUser = mAuth.getCurrentUser();
+                        writeNewUser(firebaseUser.getUid(), username, email);
                     } else {
-                        Toast.makeText(Register.this, "Registration failed: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                        progressBar.setVisibility(View.GONE);
+                        Toast.makeText(Register.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
 
-    private void updateUserData(User user, String userId) {
-        databaseUsers.child(userId).setValue(user);
-        usernamesRef.child(user.username).setValue(true); // Mark username as taken
-        sendVerificationEmail(mAuth.getCurrentUser());
+    private void writeNewUser(String userId, String username, String email) {
+        User user = new User(username, email, false);
+        databaseUsers.child(userId).setValue(user)
+                .addOnCompleteListener(task -> {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(Register.this, "Registration successful!", Toast.LENGTH_SHORT).show();
+                        startActivity(new Intent(Register.this, Login.class));
+                        finish();
+                    } else {
+                        Toast.makeText(Register.this, "Failed to register user in database.", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
-    private void sendVerificationEmail(FirebaseUser user) {
-        if (user != null) {
-            user.sendEmailVerification().addOnCompleteListener(task -> {
-                progressBar.setVisibility(View.GONE);
-                if (task.isSuccessful()) {
-                    Toast.makeText(Register.this, "Verification email sent to " + user.getEmail(), Toast.LENGTH_LONG).show();
-                    finish();
-                } else {
-                    Toast.makeText(Register.this, "Failed to send verification email.", Toast.LENGTH_SHORT).show();
-                }
-            });
+    public class User {
+        public String username;
+        public String email;
+        public boolean isOnline;
+
+        public User() {
+            // Default constructor required for calls to DataSnapshot.getValue(User.class)
+        }
+
+        public User(String username, String email, boolean isOnline) {
+            this.username = username;
+            this.email = email;
+            this.isOnline = isOnline;
         }
     }
-}
 
-class User {
-    public String username;
-    public String email;
-    public boolean isOnline;
-
-    public User() {
-        // Default constructor required for calls to DataSnapshot.getValue(User.class)
-    }
-
-    public User(String username, String email, boolean isOnline) {
-        this.username = username;
-        this.email = email;
-        this.isOnline = isOnline;
-    }
 }

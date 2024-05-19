@@ -52,15 +52,15 @@ public class startic_heto extends AppCompatActivity {
 
 
 
-        Button button4 = findViewById(R.id.v2button);
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent4 = new Intent(startic_heto.this,start_2v2.class);
-                startActivity(intent4);
-
-
-            }
-        });
+//        Button button4 = findViewById(R.id.v2button);
+//        button4.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent4 = new Intent(startic_heto.this,start_2v2.class);
+//                startActivity(intent4);
+//
+//
+//            }
+//        });
     }
 }

@@ -52,11 +52,11 @@ public class MainActivity extends AppCompatActivity {
 
 
 
-        Button button5 = findViewById(R.id.packs);
+        Button button5 = findViewById(R.id.box_card);
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent5 = new Intent(MainActivity.this, paks_heto.class);
+                Intent intent5 = new Intent(MainActivity.this, box_cards.class);
                 startActivity(intent5);
             }
 

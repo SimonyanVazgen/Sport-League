@@ -1,50 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".call">
-
-
+    android:background="@drawable/kadr"
+    android:padding="16dp">
 
     <TextView
-    android:id="@+id/usernameTextView"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Username will appear here"
-    android:textSize="24sp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent"
-    app:layout_constraintTop_toTopOf="parent" />
-
-
-    <ImageButton
-        android:id="@+id/callButton"
-        android:layout_width="164dp"
-        android:layout_height="84dp"
-        android:background="?attr/selectableItemBackground"
-        app:layout_constraintTop_toBottomOf="@id/usernameTextView"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:id="@+id/requestTextView"
+        android:layout_width="166dp"
+        android:layout_height="37dp"
+        android:layout_centerInParent="true"
+        android:text="Waiting for requests..."
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/acceptButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Accept"
-        app:layout_constraintTop_toBottomOf="@id/callButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:background="@drawable/bac_button4"
+        android:layout_below="@id/requestTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
 
     <Button
-        android:id="@+id/rejectButton"
+        android:id="@+id/declineButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Reject"
-        app:layout_constraintTop_toBottomOf="@id/acceptButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Decline"
+        android:background="@drawable/bac_button4"
+        android:layout_below="@id/acceptButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"/>
+
+</RelativeLayout>

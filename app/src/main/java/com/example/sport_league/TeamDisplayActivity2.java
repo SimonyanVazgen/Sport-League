@@ -16,7 +16,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class TeamDisplayActivity1 extends AppCompatActivity {
+public class TeamDisplayActivity2 extends AppCompatActivity {
 
     private List<ImageView> imageViews;
     private List<String> imageUris;
@@ -26,7 +26,7 @@ public class TeamDisplayActivity1 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_team_display1);
+        setContentView(R.layout.activity_team_display2);
 
         initializeImageViews();
         loadCardData();
@@ -36,7 +36,7 @@ public class TeamDisplayActivity1 extends AppCompatActivity {
     private void initializeImageViews() {
         imageViews = new ArrayList<>();
         int[] ids = {
-               R.id.imageViewTeam2, R.id.imageViewTeam3, R.id.imageViewTeam4, R.id.imageViewTeam5, R.id.imageViewTeam6
+                R.id.button13, R.id.button12, R.id.button3
         };
 
         for (int id : ids) {
@@ -50,12 +50,9 @@ public class TeamDisplayActivity1 extends AppCompatActivity {
         imageUris = new ArrayList<>();
         ratings = new ArrayList<>();
 
-        addCardData("https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/pngfind.com-nba-2k17-logo-png-2439932.png?alt=media&token=a1570b43-d22b-4c8c-b9b5-87ddffe8c94a", "95");
-        addCardData("https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/pngfind.com-nba-2k16-png-2754401.png?alt=media&token=2c82ff16-3ded-43ea-9ea9-b02758d9229f", "98");
-        addCardData("https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/pngfind.com-carmelo-anthony-png-653272.png?alt=media&token=8cf4e89e-73fc-4d83-8044-1a907f42c172", "95");
-        addCardData("https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/pngfind.com-kawhi-leonard-png-1329602.png?alt=media&token=7c30a97f-b24d-403b-8113-569adc0ab26d", "92");
-        addCardData("https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/pngfind.com-kobe-bryant-png-328894.png?alt=media&token=80eadee8-a517-4bec-a71c-90cb4df04e4b", "100");
-        addCardData("https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/pngfind.com-larry-bird-png-3047540.png?alt=media&token=bc2e8c5c-5630-4211-9fb1-639d02c5688a", "100");
+        addCardData("https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/DGunNJZXkAAj1sq.png?alt=media&token=b310592c-02d8-4a57-9cbb-80ebc433dee8", "88");
+        addCardData("https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/DGunOgtXYAIg4oH.png?alt=media&token=aa4c7db5-72a6-403e-bfe0-5a65a4631696", "92");
+        addCardData("https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/DGunPdEXkAA1CW0.png?alt=media&token=a587d921-59f2-4936-bdb0-196851a47465", "91");
 
 
 
