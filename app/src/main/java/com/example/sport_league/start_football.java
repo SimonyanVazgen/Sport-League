@@ -75,7 +75,7 @@ public class start_football extends AppCompatActivity {
 
 
                ImageView imageView1 = findViewById(R.id.imageView20);
-        String img1 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/DALL%C2%B7E%202024-05-01%2021.31.29%20-%20A%20realistic%20and%20detailed%20illustration%20of%20a%20sports%20trophy%20cup%2C%20typically%20awarded%20at%20sporting%20events.%20The%20cup%20should%20have%20a%20shiny%20metallic%20finish%2C%20possi.webp.png?alt=media&token=13a1fdb8-e14d-45c9-8b73-2699b33e6645";
+        String img1 = "https://firebasestorage.googleapis.com/v0/b/loginapp-3ec87.appspot.com/o/laveli.png?alt=media&token=91b286bb-fe8d-47d0-967c-a86f3fcc6f1f";
         Glide.with(this).load(img1).into(imageView1);
 
 

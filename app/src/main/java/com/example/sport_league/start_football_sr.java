@@ -189,8 +189,7 @@ public class start_football_sr extends AppCompatActivity {
             if (newRatingValue > averageRating) {
                 scoreWins++;
             } else if(newRatingValue == averageRating){
-                scoreWins++;
-                scoreLosses++;
+
 
             } else {
                 scoreLosses++;
@@ -205,7 +204,7 @@ public class start_football_sr extends AppCompatActivity {
     }
 
     private void updateScoreDisplay() {
-        scoreTextView.setText("Wins: " + scoreWins + " | Losses: " + scoreLosses);
+        scoreTextView.setText("Losses: " + scoreWins + " | Wins: " + scoreLosses);
     }
 
     private void checkForEndGame() {
@@ -220,13 +219,13 @@ public class start_football_sr extends AppCompatActivity {
 
         Intent resultIntent = new Intent(this, market.class);
         if (scoreWins >= 5) {
-            resultButton.setText("You won! +500 coins +5 sport cup");
-            resultIntent.putExtra("gameResult", "win");
-            resultIntent.putExtra("coinChange", 500);
-        } else if (scoreLosses >= 5) {
             resultButton.setText("You lost! -300 coins -3 sport cup");
             resultIntent.putExtra("gameResult", "loss");
             resultIntent.putExtra("coinChange", -300);
+        } else if (scoreLosses >= 5) {
+            resultButton.setText("You won! +500 coins +5 sport cup");
+            resultIntent.putExtra("gameResult", "win");
+            resultIntent.putExtra("coinChange", 500);
         }
 
         resultButton.setOnClickListener(v -> {

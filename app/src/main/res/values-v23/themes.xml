@@ -2,8 +2,8 @@
 
     <style name="Theme.Sport_league" parent="Base.Theme.Sport_league">
         <!-- Transparent system bars for edge-to-edge. -->
-        <item name="android:navigationBarColor">@android:color/transparent</item>
-        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/black</item>
+        <item name="android:statusBarColor">@android:color/black</item>
         <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
     </style>
 </resources>

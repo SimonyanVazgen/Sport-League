@@ -47,19 +47,8 @@ public class call extends AppCompatActivity {
             finish();
         }
 
-        acceptButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                acceptTradeRequest();
-            }
-        });
-
-        declineButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                declineTradeRequest();
-            }
-        });
+        acceptButton.setOnClickListener(v -> acceptTradeRequest());
+        declineButton.setOnClickListener(v -> declineTradeRequest());
     }
 
     private void listenForTradeRequests(String userId) {

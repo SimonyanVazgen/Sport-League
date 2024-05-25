@@ -3,50 +3,24 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/playerOneName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/playerTwoName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/playerOneName"
-        android:layout_centerHorizontal="true"
-        android:textSize="18sp" />
-
-    <TextView
-        android:id="@+id/chatDisplay"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_below="@+id/playerTwoName"
-        android:background="#CCCCCC" />
-
     <EditText
         android:id="@+id/chatInput"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/chatDisplay"
-        android:hint="Type a message" />
+        android:layout_alignParentBottom="true"
+        android:hint="Type your message here"/>
 
     <Button
         android:id="@+id/sendChatButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/chatInput"
+        android:layout_alignParentBottom="true"
         android:text="Send" />
 
-    <Button
-        android:id="@+id/tradeButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/sendChatButton"
-        android:text="Trade" />
-
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/chatInput"/>
 </RelativeLayout>

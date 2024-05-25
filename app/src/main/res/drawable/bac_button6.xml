@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:tools="http://schemas.android.com/tools" xmlns:android="http://schemas.android.com/apk/res/android">
+    <item tools:ignore="StateListReachable">
+        <shape android:shape="oval">
+            <corners android:radius="20dp" />
+            <gradient
+                android:startColor="@color/black"
+                android:endColor="@color/aa"
+                android:centerColor="@color/red"
+                android:angle="135"/>
+
+            <padding
+                android:left="12dp"
+                android:top="12dp"
+                android:right="12dp"
+                android:bottom="12dp"/>
+        </shape>
+    </item>
+
+    <set xmlns:android="http://schemas.android.com/apk/res/android">
+        <objectAnimator
+            android:propertyName="backgroundColor"
+            android:duration="300"
+            android:valueFrom="#3C000000"
+            android:valueTo="#FFFFFF"
+            android:valueType="intType"
+            android:repeatCount="1"
+            android:repeatMode="reverse"
+            android:interpolator="@android:anim/accelerate_decelerate_interpolator"/>
+    </set>
+
+</selector>

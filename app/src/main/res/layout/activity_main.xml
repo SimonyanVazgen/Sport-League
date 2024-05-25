@@ -4,206 +4,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/kadr"
+android:background="@drawable/bacgroundau"
     tools:context=".MainActivity">
 
 
-    <Button
-        android:id="@+id/Start"
-        android:layout_width="wrap_content"
-        android:layout_height="118dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginEnd="51dp"
-        android:layout_marginBottom="594dp"
-        android:alpha="0.9"
-        android:background="@drawable/messi_himnakani"
 
-        android:gravity="center"
-        android:text="START"
-        android:textColor="@color/white"
-        android:textSize="50dp" />
-
-
-    <Button
-        android:id="@+id/card_bascetball"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="28dp"
-        android:layout_marginBottom="164dp"
-        android:alpha="0.8"
-        android:background="@drawable/bac_button4"
-        android:text="my cards basketball"
-        android:textColor="@color/white"
-        android:textSize="40dp" />
-
-    <Button
-        android:id="@+id/box_card"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="31dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="30dp"
-        android:layout_marginBottom="296dp"
-        android:alpha="0.8"
-        android:background="@drawable/bac_button4"
-        android:text="MY CARDS boxing "
-        android:textColor="@color/white"
-        android:textSize="40dp" />
-
-    <Button
-        android:id="@+id/market"
-        android:layout_width="162dp"
-        android:layout_height="124dp"
+    <ImageView
+        android:id="@+id/imgHeader"
+        android:layout_width="match_parent"
+        android:layout_height="511dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="639dp"
-        android:layout_marginEnd="32dp"
-        android:alpha="0.8"
-        android:background="@drawable/bac_button4"
-        android:text="MARKET"
-        android:textColor="@color/white"
-        android:textSize="24dp"
-        android:textStyle="bold" />
-
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="0dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/erere" />
     <Button
-        android:id="@+id/card"
-        android:layout_width="wrap_content"
+        android:id="@+id/Start"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
+        android:layout_below="@id/imgHeader"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginStart="34dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="27dp"
-        android:layout_marginBottom="448dp"
-        android:alpha="0.8"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="8dp"
+        android:text="START"
+        tools:ignore="HardcodedText"
         android:background="@drawable/bac_button4"
-        android:text="MY CARDS football"
-        android:textColor="@color/white"
-        android:textSize="45dp" />
+        android:textColor="@android:color/white"
+        android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/trading"
-        android:layout_width="162dp"
-        android:layout_height="124dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="33dp"
-        android:layout_marginBottom="22dp"
-        android:alpha="0.8"
-        android:background="@drawable/bac_button4"
-        android:text="TRADING"
-        android:textColor="@color/white"
-        android:textSize="24dp"
-        android:textStyle="bold" />
+    <LinearLayout
+        android:id="@+id/cardsSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Start"
+        android:orientation="horizontal"
+        android:layout_marginTop="0dp">
+
+        <Button
+            android:id="@+id/card"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/football"
+            android:text="MY CARDS FOOTBALL"
+            tools:ignore="HardcodedText"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/card_bascetball"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/backetball"
+        android:text="MY CARDS BASKETBALL"
+            tools:ignore="HardcodedText"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/box_card"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/boxing"
+        android:text="MY CARDS BOXING"
+            tools:ignore="HardcodedText"
+            android:textColor="@android:color/white"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardsSection"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp">
+
+        <Button
+            android:id="@+id/trading"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/bac_button4"
+            android:text="TRADING"
+            tools:ignore="HardcodedText"
+            android:textColor="@android:color/white"/>
+
+        <Button
+            android:id="@+id/market"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_weight="1"
+            android:background="@drawable/bec_button6"
+            android:text="MARKET"
+            android:textColor="@android:color/white"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/logout"
-        android:layout_width="98dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="12dp"
-        android:layout_marginEnd="283dp"
-        android:layout_marginBottom="724dp"
-        android:background="@drawable/bac_button4"
-        android:text="@string/logout"
-        android:textColor="@color/white"
-        android:textStyle="bold" />
-
-    <TextView
-        android:id="@+id/yndanurpox"
-        android:layout_width="260dp"
-        android:layout_height="30dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="37dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="95dp"
-        android:layout_marginBottom="736dp"
-        android:gravity="center"
-        android:text="500"
+        android:background="@drawable/bac_button4"
+        android:layout_marginStart="4dp"
         android:textColor="@color/white"
-        android:textSize="25dp"
-        android:textStyle="bold"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.43"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
+        android:layout_marginTop="13dp"
+        android:text="logout"
+        tools:ignore="HardcodedText" />
 
     <Button
-        android:id="@+id/button15"
-        android:layout_width="123dp"
-        android:layout_height="65dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="125dp"
-        android:layout_marginTop="1dp"
-        android:layout_marginEnd="144dp"
-        android:layout_marginBottom="718dp"
-        android:background="@drawable/bec"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.531"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.001"
-        tools:ignore="MissingConstraints" />
-
-    <ImageView
-        android:id="@+id/money"
-        android:layout_width="47dp"
-        android:layout_height="45dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="199dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="146dp"
-        android:layout_marginBottom="728dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.604"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
-        app:srcCompat="@drawable/baseline_currency_bitcoin_24" />
-
-    <ImageButton
         android:id="@+id/call"
         android:layout_width="58dp"
-        android:layout_height="53dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="6dp"
+        android:layout_marginStart="329dp"
+        android:layout_marginTop="9dp"
         android:background="@drawable/baseline_circle_notifications_24" />
-
 </RelativeLayout>

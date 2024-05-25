@@ -1,6 +1,9 @@
 package com.example.sport_league;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -57,9 +60,20 @@ public class RandomTradingActivity extends AppCompatActivity {
                     Random random = new Random();
                     int index = random.nextInt(userIds.size());
                     selectedUserId = userIds.get(index);
-                    selectedUsername = "Anonymous User"; // Changed to a generic name
-                    usernameTextView.setText(selectedUsername);
-                    statusTextView.setText("Random online user found. Ready to send a trade request.");
+
+                    databaseUsers.child(selectedUserId).child("username").addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            selectedUsername = dataSnapshot.getValue(String.class);
+                            usernameTextView.setText(selectedUsername);
+                            statusTextView.setText("Random online user found. Ready to send a trade request.");
+                        }
+
+                        @Override
+                        public void onCancelled(DatabaseError databaseError) {
+                            Toast.makeText(RandomTradingActivity.this, "Failed to fetch username: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
                 } else {
                     statusTextView.setText("No online users found.");
                     usernameTextView.setText("");
@@ -78,8 +92,13 @@ public class RandomTradingActivity extends AppCompatActivity {
         if (!selectedUserId.isEmpty()) {
             TradeRequest tradeRequest = new TradeRequest(FirebaseAuth.getInstance().getCurrentUser().getUid(), selectedUserId, "pending");
             tradeRequestsRef.push().setValue(tradeRequest)
-                    .addOnSuccessListener(aVoid -> Toast.makeText(RandomTradingActivity.this, "Trade request sent.", Toast.LENGTH_SHORT).show())
-                    .addOnFailureListener(e -> Toast.makeText(RandomTradingActivity.this, "Failed to send trade request.", Toast.LENGTH_SHORT).show());
+                    .addOnSuccessListener(aVoid -> {
+                        Toast.makeText(RandomTradingActivity.this, "Trade request sent.", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(RandomTradingActivity.this, Fortradingtwoplayer.class);
+                        intent.putExtra("sessionId", selectedUserId); // Pass the selected user ID as the session ID
+                        startActivity(intent);
+                    })
+                    .addOnFailureListener(e -> Toast.makeText(RandomTradingActivity.this, "Failed to send trade request: " + e.getMessage(), Toast.LENGTH_SHORT).show());
         } else {
             Toast.makeText(this, "No user selected.", Toast.LENGTH_SHORT).show();
         }

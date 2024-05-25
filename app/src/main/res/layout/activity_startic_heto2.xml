@@ -5,20 +5,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/kadr"
+    android:background="@drawable/start_heto"
     tools:context=".startic_heto">
 
     <!-- Your existing XML layout with minor changes -->
 
     <Button
         android:id="@+id/football"
-        android:layout_width="282dp"
-        android:layout_height="109dp"
-        android:layout_marginTop="216dp"
-        android:layout_marginEnd="64dp"
+        android:layout_width="207dp"
+        android:layout_height="213dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="4dp"
         android:alpha="0.9"
-        android:background="@drawable/bac_button4"
-        android:text="FOOTBALL"
+        android:background="@drawable/start_heto_football"
         android:textColor="@color/white"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,13 +25,12 @@
 
     <Button
         android:id="@+id/BASKETBALL"
-        android:layout_width="278dp"
-        android:layout_height="110dp"
-        android:layout_marginTop="360dp"
-        android:layout_marginEnd="68dp"
+        android:layout_width="207dp"
+        android:layout_height="213dp"
+        android:layout_marginTop="284dp"
+        android:layout_marginEnd="168dp"
         android:alpha="0.9"
-        android:background="@drawable/bac_button4"
-        android:text="BASKETBALL"
+        android:background="@drawable/start_heto_basketball"
         android:textColor="@color/white"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -40,13 +38,12 @@
 
     <Button
         android:id="@+id/BOXING"
-        android:layout_width="274dp"
-        android:layout_height="118dp"
+        android:layout_width="207dp"
+        android:layout_height="213dp"
         android:layout_marginTop="508dp"
-        android:layout_marginEnd="68dp"
+        android:layout_marginEnd="4dp"
         android:alpha="0.9"
-        android:background="@drawable/bac_button4"
-        android:text="BOXING"
+        android:background="@drawable/start_heto_boxing"
         android:textColor="@color/white"
         android:textSize="40dp"
         app:layout_constraintEnd_toEndOf="parent"

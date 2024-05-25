@@ -2,12 +2,10 @@ package com.example.sport_league;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -15,119 +13,49 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-    FirebaseAuth auth;
-    Button button;
-    TextView textView;
-    FirebaseUser user;
-    private ImageButton callButton;
+    private FirebaseAuth auth;
+    private FirebaseUser user;
+    private  Button callButton;
 
-    @SuppressLint({"MissingInflatedId", "WrongViewCast"})
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        initializeButtons();
+        checkUserAuthentication();
+    }
 
-
-
+    private void initializeButtons() {
+        findViewById(R.id.Start).setOnClickListener(v -> startNewActivity(startic_heto.class));
+        findViewById(R.id.box_card).setOnClickListener(v -> startNewActivity(box_cards.class));
+        findViewById(R.id.card).setOnClickListener(v -> startNewActivity(My_cards.class));
+        findViewById(R.id.market).setOnClickListener(v -> startNewActivity(market.class));
+        findViewById(R.id.card_bascetball).setOnClickListener(v -> startNewActivity(start_basketball_my_cards.class));
+        findViewById(R.id.trading).setOnClickListener(v -> startNewActivity(treading.class));
+        findViewById(R.id.logout).setOnClickListener(v -> logoutUser());
         callButton = findViewById(R.id.call);
-        callButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, call.class); // Change to the appropriate Activity
+        callButton.setOnClickListener(v -> startNewActivity(call.class));
+    }
 
-                startActivity(intent);
-            }
-        });
+    private void startNewActivity(Class<?> cls) {
+        Intent intent = new Intent(MainActivity.this, cls);
+        startActivity(intent);
+    }
 
-        Button button = findViewById(R.id.Start);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, startic_heto.class);
-                startActivity(intent);
-            }
-
-        });
-
-
-
-        Button button5 = findViewById(R.id.box_card);
-        button5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent5 = new Intent(MainActivity.this, box_cards.class);
-                startActivity(intent5);
-            }
-
-        });
-
-
+    private void checkUserAuthentication() {
         auth = FirebaseAuth.getInstance();
-        button = findViewById(R.id.logout);
         user = auth.getCurrentUser();
-        if(user == null){
-            Intent intent = new Intent(getApplicationContext(), Login.class);
-            startActivity(intent);
-            finish();
+        if (user == null) {
+            logoutUser();
         }
+    }
 
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(), Login.class);
-                startActivity(intent);
-                finish();
-            }
-        });
-
-
-        Button button1 = findViewById(R.id.card);
-        button1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent5 = new Intent(MainActivity.this, My_cards.class);
-                startActivity(intent5);
-            }
-
-        });
-
-
-
-        Button button3 = findViewById(R.id.market);
-        button3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, market.class);
-                startActivity(intent);
-            }
-
-        });
-
-        Button button4 = findViewById(R.id.card_bascetball);
-        button4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, start_basketball_my_cards.class);
-                startActivity(intent);
-            }
-
-        });
-
-
-        Button button6 = findViewById(R.id.trading);
-        button6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent6 = new Intent(MainActivity.this, treading.class);
-                startActivity(intent6);
-            }
-
-        });
-
-
-
+    private void logoutUser() {
+        FirebaseAuth.getInstance().signOut();
+        Intent intent = new Intent(getApplicationContext(), Login.class);
+        startActivity(intent);
+        finish();
     }
 }

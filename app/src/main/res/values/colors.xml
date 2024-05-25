@@ -5,7 +5,7 @@
     <color name="green">#336A23</color>
     <color name="brown">#7B4B3D</color>
     <color name="bacgreen">#758FFF0F</color>
-    <color name="blue">#C12C41B7</color>
+    <color name="blue">#0026FB</color>
     <color name="main_background">#19191b</color>
     <color name="pink">#e45eb0</color>
     <color name="green1">#34e3c4</color>
@@ -14,4 +14,5 @@
     <color name="bacbrown">#673AB7</color>
     <color name="man">#7A59B5</color>
     <color name="ee">#FF2C07</color>
+    <color name="aa">#2196F3</color>
 </resources>
